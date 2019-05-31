@@ -6,7 +6,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (args, env) => {
-    return {        
+    return {
+        mode: "development",
+        devtool: "inline-source-map",
+        devServer: {
+            contentBase: './dist'
+        },
+
         output: {
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist')
