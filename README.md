@@ -1,20 +1,22 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+#Project Description 
+IWCC is redeveloping their content management system templates by providing Volano with custom designs which will be converted to HTML/CSS/JavaScript. completed templates will be handed off to OmniUpdate which will convert the templates to be used on the CMS system.
+
+Volano is creating responsive layouts using HTML5 structures, which will meet Web Content Accessibility Guide (WCAG v2.0) standards. 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+- Design Standards and Best practice guides are provided by OmniUpdate in the /doc source folder
+- Completed designs and design guides are provided in Adobe Photoshop CC2019 format (PSD) in the /design source folder
+
+#Contacts 
+- [name] - [title] - [email] - [phone] 
+
+#Development 
+There is no database configuration for this project 
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+For ease in development and packaging according to OmniUpdates recommended file structure in their design standards guides, Webpack is used to bundle, compile and emit all resources for this project.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+To get the project up and running quickly:
+- $> npm install
+- $> npm run serve (this will start a webpack-dev-server on http://localhost:8080/)
+- navigate to http://localhost:8080/page_template.html
