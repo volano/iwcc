@@ -1,5 +1,6 @@
 const merge = require("webpack-merge");
 const path = require("path");
+const webpack = require("webpack")
 
 // Plugin Constants
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -10,6 +11,7 @@ module.exports = (args, env) => {
         mode: "development",
         devtool: "inline-source-map",
         devServer: {
+            hot:true,
             contentBase: './dist'
         },
 
@@ -88,7 +90,8 @@ module.exports = (args, env) => {
                 filename: '[name].css',
                 chunkFilename: '[id].css',
                 outputPath: "css"
-            })
+            }),
+            new webpack.HotModuleReplacementPlugin()
         ]
    }
     
