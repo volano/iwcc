@@ -21,4 +21,267 @@
 @import "components/statistics";
 @import "components/story";
 @import "components/content";
+@import "colors";
+@import "variables";
 // Modules
+
+.container{
+    max-width:1720px;
+}
+
+.content{
+    height:100%;
+    font-family: 'Titillium';
+}
+
+.dot-background{
+    background-image: url(../images/backgrounddots.png);
+    background-repeat: no-repeat;
+    background-size:70%;
+    background-position: center;
+}
+
+
+.nav-utility-container{
+    background-color: $light-gray;   
+}
+
+.nav-utility{
+    margin:0 100px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:0;
+    height:30px;
+     
+    .nav-link{
+        color:$black;
+        font: 'Ttillium-Bold';
+        font-size:.65rem;
+        font-weight:700;
+        text-transform: uppercase;
+        margin:0 40px 0 0;
+        
+    }
+    .nav-link:hover{
+        color:$yellow;
+    }
+    .nav-utility-left, .nav-utility-right{
+        display:flex;
+        flex-direction:row;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    .nav-utility-right{
+        display:flex-end;
+        flex-grow:1;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .nav-link{
+            margin:0 0 0 40px;
+            color:$navy-blue;
+        }
+        input, input:focus{
+            margin:10px 0 0 0;
+            padding:0;
+            background:none;
+            border:none;
+            border-bottom:1px solid $dark-gray;
+            outline:none;
+            
+        }
+   
+    }
+    .nav-utility-left{
+        flex-grow:2;
+        display: flex-start;
+    }
+
+}
+
+
+.hero{
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 820px;
+    background: linear-gradient(rgba(0,42,66,.5), rgba(0,42,66,.5)),
+    url(../images/home_hero.png);
+    position:relative;
+    box-shadow: 0 4px 2px -2px gray;
+
+    .hero-caption{
+        color:$white;
+        align-self: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+
+        h2{
+            margin-bottom:30px;
+        }
+
+        p{
+            text-align: center;
+        }
+
+        .play-button{
+            color:$yellow;
+            font-weight:600;
+            border:solid 2px $yellow;
+            padding:1.5rem 2.5rem;
+            margin:1.5rem 0 1.5rem 0;
+
+            &:hover{
+                color:$white;
+                border-color:$white;
+            }
+        }
+
+    }
+
+}
+
+.primary-nav-container{
+    display:flex;
+    flex-direction: row;
+    height:108px;
+    background: linear-gradient(rgba(0,63,114,.75), rgba(0,63,114,.75));
+    justify-content: space-between;
+    padding:0 100px;
+
+    .logo{
+        align-self: center;
+        color:$white;
+    }
+
+}
+
+.nav-primary{
+    display:flex;
+    
+    text-transform:uppercase;
+    font-size:1.25rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-link{
+    color:$white;
+
+    &:hover{
+        color:$yellow;
+    }
+    }
+}
+
+
+.s-admissions{
+    background-image: url(../images/backgrounddots.png);
+    background-repeat:repeat-x;
+    background-size:50%;
+    background-position: top left;
+    height:100%;
+    
+}
+
+.admin-nav-container{
+    background: linear-gradient(rgba(0,63,114,.75), rgba(0,63,114,.75));
+    padding:1rem 100px;
+    height:auto;
+    display:block;
+    position: relative;
+
+    &:after{
+        content: "";
+        background: url(../images/background-admissions.png) no-repeat;
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-size: 100%;
+
+        position: absolute;
+        z-index: -1; 
+    }
+
+    h2{
+        color:$white;
+        margin:0 0 2.5rem 0;
+        font-size:2rem;
+    }
+}
+
+.admin-nav{
+    display:flex;
+    list-style:none;
+    justify-content: space-between;
+    padding-inline-start:0px;
+    
+
+    button{
+        display:flex;
+        flex-direction: column;
+        background:none;
+        padding:1.5rem 4rem;
+        color:$white;
+        text-transform: uppercase;
+        font-size:1.2rem;
+        border: 2px solid $white; 
+        margin:10px 0 50px 0;
+        align-items: center;
+        width:15rem;
+        
+
+        &:hover{
+            color:$yellow;
+            border-color:$yellow;
+        }
+    }
+
+}
+
+.admissions-panels{   
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin:30px 0;
+
+    .become-a-reiver{
+        background-image: url(../images/become-a-reiver.png) no-repeat;
+        background-size:contain;
+        background-position: center;
+        
+    }
+    .campus-map{
+        background-image: url(../images/campus-tour.png) no-repeat;
+        background-position: center;
+        background-size:contain;
+        
+    }
+
+.admissions-card{
+    align-content: center;
+    width:40%;
+    position:relative;
+    min-height:370px;
+
+    -moz-box-shadow:    2px 2px 6px 0px $gray;
+    -webkit-box-shadow: 2px 2px 6px 0px $gray;
+    box-shadow:         2px 2px 6px 0px $gray;
+
+    button{
+       display:block; 
+    }
+
+}
+}
+
+
+@include media-breakpoint-up(md) {
+
+}
