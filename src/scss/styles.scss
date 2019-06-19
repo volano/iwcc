@@ -81,20 +81,161 @@
 }
 
 .s-newsevents {
+    display: flex;
     background: $light-gray url(../images/backgrounddots.png) no-repeat center;
     background-size: cover;
     min-height: 30rem;
-    padding: 2.5rem;
+    padding: 2.5rem 6.25rem;
+    flex-flow: row nowrap;
 
     h3 {
         font-family: "TitilliumText22LBold";
         font-size: 40px;
-        color: $blue;
+        color: $navy-blue;
+        text-transform: capitalize;
     }  
 
     .intro {
         display: flex;
         align-items: baseline;
+        flex-wrap: nowrap;
+    }
+
+    .btn-next {
+        font-size: 1.5rem;
+        font-family: 'TitilliumText22LMedium'; 
+        color: $purple;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-left: 3rem;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 11px solid $purple;
+            border-right: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            display: inline-block;
+            vertical-align: -.15em;
+            margin-left: 10px;
+        }
+    }
+    .news,
+    .events {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .news {
+        display: none;
+        flex-basis: 40%;
+
+        .newsfeed {
+            width: 100%;
+            border: 1px solid $purple;
+            min-height: 345px;
+            background: $white url(../images/backgrounddots.png) no-repeat  -102px -590px;
+            background-size: 250%;
+            position: relative;
+            padding: 30px;
+
+            .feed {
+                border: 1px solid $black;
+                min-height: 200px;
+                max-height: 100%;
+                width: 40%;
+                background-color: $white;
+                overflow-y: auto;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 30px;
+                background: transparent url(../images/bkg-student.png) no-repeat bottom center;
+                background-size: contain;
+                width: 40%;
+                height: 318px;
+            }
+    
+        }
+    }
+    .events {
+        flex-basis: 60%;
+
+        .event-day-list {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .event-day {
+            flex: 0 0 33.33%;
+            display: flex;
+            flex-flow: row;
+            align-items: start;
+            margin-bottom: 90px;
+
+            ul {
+                padding-left: 15px;
+            }
+
+            li {
+            }
+
+            h4{
+                font-family: "TitilliumText22LBold";
+                margin: 0;
+            }
+
+            a {
+                color: $purple;
+            }
+        }
+
+        .date {
+            flex: 0 0 48px;
+            line-height: 1;
+            height: 48px;
+            color: $dark-gray;
+            background-color: $white;
+            border: 2px solid $dark-gray;
+            text-align: center;
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 8px 0 0;
+
+            .date-month {
+                font-size: 9.875px;
+            }
+
+            .date-day {
+                font-family: "TitilliumText22LBold";
+                font-size: 24px;
+                line-height: 1.2;
+            }
+        }
+
+
+    }
+
+    @include media-breakpoint-up(md) {
+        .news {
+            display: block;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .newsfeed {
+            min-height: 379px;
+        }
     }
 }
 
