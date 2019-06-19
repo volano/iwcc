@@ -62,14 +62,15 @@ module.exports = (args, env) => {
                         loader: 'file-loader',
                         options: {
                             name: '[contenthash:8].[ext]',
-                            outputPath: "images"
+                            outputPath: "images",
+                            publicPath: "/images"
                         }
                     }
                 },
 
                 // Font files
                 {
-                    test: /\.(woff2?|svg|ttf)/,
+                    test: /fonts\/.*\.(woff2?|svg|ttf)/,
                     use: {
                         loader: 'file-loader',
                         options: {
@@ -77,14 +78,18 @@ module.exports = (args, env) => {
                             outputPath: "fonts"
                         }
                     }
+                },
+                // Handlebars templates
+                { 
+                    test: /\.hbs$/, 
+                    loader: "handlebars-loader" 
                 }
-            ],
-     
+            ],  
         },
         plugins: [
             new HtmlWebpackPlugin({
                 filename: 'page_template.html',
-                template: './html/home.html'
+                template: './html/home.hbs'
             }),
             new MiniCssExtractPlugin({
                 filename: '[name].css',
