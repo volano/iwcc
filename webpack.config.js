@@ -70,7 +70,7 @@ module.exports = (args, env) => {
 
                 // Font files
                 {
-                    test: /fonts\/.*\.(woff2?|svg|ttf)/,
+                    test: /fonts\/.*\.(woff2?|svg|eot|ttf)/,
                     use: {
                         loader: 'file-loader',
                         options: {

@@ -1,9 +1,1 @@
-@font-face {
-    font-family: 'Titillium';
-    src: url(../fonts/TitilliumText22L003-webfont.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'Titillium-Bold';
-    src: url(../fonts/TitilliumText22L006-webfont.ttf) format('truetype');
-}
-
+$font-family-sans-serif: 'TitilliumText22LRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; 
