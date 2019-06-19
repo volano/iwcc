@@ -1,5 +1,7 @@
 // Base setups
+@import "colors";
 @import "variables";
+
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
@@ -7,11 +9,13 @@
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/nav";
 //Mixins
 //Functions
 
 // Core styles
 @import "global";
+@import "footer";
 
 // Components
 @import "components/accordion";
@@ -21,13 +25,7 @@
 @import "components/statistics";
 @import "components/story";
 @import "components/content";
-@import "colors";
-@import "variables";
 // Modules
-
-// .container{
-//     //max-width:1720px;
-// }
 
 .content{
     font-family: 'Titillium';
