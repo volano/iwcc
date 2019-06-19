@@ -1,0 +1,112 @@
+.nav-utility-container{
+    background-color: $light-gray;
+}
+
+.nav-utility{
+    margin:0 100px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:0;
+    height:30px;
+
+    .nav-link{
+        color:$black;
+        font: 'TitilliumText22LBold';
+        font-size:.65rem;
+        font-weight:700;
+        text-transform: uppercase;
+        margin:0 40px 0 0;
+
+        @include hover-focus-active{
+            color:$yellow;
+        }
+
+    }
+
+    .nav-utility-left, .nav-utility-right{
+        display:flex;
+        flex-direction:row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .nav-utility-right{
+        display:flex-end;
+        flex-grow:1;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .nav-link{
+            margin:0 0 0 40px;
+            color:$navy-blue;
+        }
+
+        input,
+        input:focus{
+            margin:10px 0 0 0;
+            padding:0;
+            background:none;
+            border:none;
+            border-bottom:1px solid $dark-gray;
+            outline:none;
+        }
+
+    }
+    .nav-utility-left{
+        flex-grow:2;
+        display: flex-start;
+    }
+
+}
+
+
+.primary-nav-container{
+    display:flex;
+    flex-direction: row;
+    height:108px;
+    background: linear-gradient(rgba(0,63,114,.75), rgba(0,63,114,.75));
+    justify-content: space-between;
+    padding:0 100px;
+
+    .logo{
+        flex: 0 1 286px;
+        height: 32px;
+        margin: 0;
+        background: transparent url(../images/logo-header.png) no-repeat center;
+        background-size: contain;
+        align-self: center;
+        color:$white;
+
+        a {
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            text-indent: -999em;
+        }
+    }
+
+    .nav-primary{
+        display:flex;
+        text-transform:uppercase;
+        font-size:1.25rem;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-link{
+            color:$white;
+
+            @include hover-focus-active{
+                color:$yellow;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .logo {
+            flex-basis: 429px;
+            height: 48px;
+        }
+    }
+}
+
