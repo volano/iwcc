@@ -80,13 +80,30 @@
 
 }
 
+.s-newsevents {
+    background: $light-gray url(../images/backgrounddots.png) no-repeat center;
+    background-size: cover;
+    min-height: 30rem;
+    padding: 2.5rem;
+
+    h3 {
+        font-family: "TitilliumText22LBold";
+        font-size: 40px;
+        color: $blue;
+    }  
+
+    .intro {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
 .s-admissions{
     background-image: url(../images/backgrounddots.png);
     background-repeat:repeat-x;
     background-size:50%;
     background-position: top left;
     margin:0 0 40px 0; 
-       
 }
 
 .admin-nav-container{
