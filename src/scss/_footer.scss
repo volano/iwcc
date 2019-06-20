@@ -38,13 +38,14 @@
     }
 
     .footer-logo {
-        width: 392px;
+        width: 100%;
+        max-width: 392px;
         height: 100px;
         overflow: hidden;
         text-indent: -999em;
         background: transparent url(../images/logo-footer.svg) no-repeat center;
-        background-size: 392px 100px;
-        flex: 0 0 392px;
+        background-size: contain;
+        flex: 0 1 auto;
     }
 
     .footer-tag {

@@ -1,6 +1,12 @@
-<header>
-    <div class="full-width nav-utility-container">
-    {{> nav-utility}}
+<header class="navbar navbar-expand-md fixed-top navbar-dark">
+    <div class="nav-container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="nnavbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar-menu">
+            {{> nav-primary }}
+            {{> nav-utility}}
+        </div>
+        <h1 class="logo d-block d-md-none"><a href="/">Iowa Western Community College</a></h1>
     </div>
-    {{> nav-primary }}
 </header>

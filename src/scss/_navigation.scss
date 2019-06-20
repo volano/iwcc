@@ -1,81 +1,14 @@
-.nav-utility-container{
-    background-color: $light-gray;
-}
-
-.nav-utility{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding:0;
-    height:30px;
-    @include make-container();
-    @include make-container-max-widths();
-
-    .nav-link{
-        color:$black;
-        font: .875rem/1 'TitilliumText22LBold';
-        text-transform: uppercase;
-
-        @include hover-focus-active{
-            color:$yellow;
-        }
-
-    }
-
-    @include media-breakpoint-up(md) {
-
-        .nav-utility-left, 
-        .nav-utility-right{
-            display:flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-    
-        .nav-utility-right{
-            flex-grow:1;
-            flex-direction: row;
-            justify-content: flex-end;
-    
-            .nav-link{
-                margin: 0 0 0 40px;
-                color: $navy-blue;
-            }
-    
-            input,
-            input:focus{
-                margin:10px 0 0 0;
-                padding:0;
-                background:none;
-                border:none;
-                border-bottom:1px solid $dark-gray;
-                outline:none;
-            }
-    
-        }
-        .nav-utility-left{
-            flex-grow:2;
-            display: flex-start;
-        }
-    
-    
-
-    }
-}
-
-
-.primary-nav-container{
-    display:flex;
-    flex-direction: row;
-    height:108px;
-    background-color: rgba(0,63,114,.75);
-    justify-content: space-between;
-    padding:0 100px;
+.nav-container {
+    display: flex;
+    flex-direction: row wrap;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    background-color: $navy-blue;
+    padding: 10px;
 
     .logo{
-        flex: 0 1 286px;
-        height: 32px;
-        margin: 0;
+        margin: 0 5px 0 auto;
         background: transparent url(../images/logo-header.png) no-repeat center;
         background-size: contain;
         align-self: center;
@@ -85,16 +18,121 @@
             display: block;
             height: 100%;
             overflow: hidden;
-            text-indent: -999em;
+            text-indent: -9999em;
         }
     }
 
+    @include media-breakpoint-up(md) {
+        background-color: transparentize($navy-blue, .25);
+        padding: 0;
+    }
+}
+
+.navbar-toggler {
+    z-index: $zindex-fixed+1;
+}
+
+#navbar-menu {
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    height: 100vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding-top: 40px;
+
+
+    @include media-breakpoint-up(md) {
+        padding-top: 0;
+        display: flex;
+        flex-flow: column-reverse;
+        max-width: 100%;
+        position: static;
+        background-color: transparent;
+        padding-top: 0;
+        height: auto;
+    }
+}
+
+.nav-utility-container{
+    width: 100%;
+
+    .nav-utility{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:0;
+        @include make-container();
+
+        .nav-link{
+            font: .875rem/30px 'TitilliumText22LBold';
+            text-transform: uppercase;
+
+            @include hover-focus-active{
+                color:$yellow;
+            }
+        }
+
+        .nav-utility-right .nav-link {
+            text-transform: none;
+        }
+
+    }
+
+    @include media-breakpoint-up(md) {
+        background-color: $light-gray;
+
+        .nav-utility{
+            flex-direction: row;
+            align-items: center;
+
+            .nav-link {
+                color: $black;
+            }
+
+            .nav-utility-right{
+                display:flex;
+                flex-direction: row;
+                margin-left: auto;
+
+                .nav-link{
+                    color: $navy-blue;
+                }
+
+                input,
+                input:focus{
+                    margin:10px 0 0 0;
+                    padding:0;
+                    background:none;
+                    border:none;
+                    border-bottom:1px solid $dark-gray;
+                    outline:none;
+                }
+
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg){
+        padding: 0 50px;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0 100px;
+    }
+
+}
+
+.nav-primary-container{
+    width: 100%;
+
     .nav-primary{
         display:flex;
+        flex-flow: column nowrap;
         text-transform:uppercase;
         font-size:1.25rem;
-        justify-content: space-between;
-        align-items: center;
 
         .nav-link{
             color:$white;
@@ -105,11 +143,44 @@
         }
     }
 
-    @include media-breakpoint-up(md) {
+    .logo {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md){
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .nav-primary {
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: block;
+            position: static;
+            flex: 0 1 286px;
+            height: 32px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 50px;
+
         .logo {
             flex-basis: 429px;
             height: 48px;
         }
+
+        .nav-primary {
+            line-height: 4.4;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 0 100px;
     }
 }
 

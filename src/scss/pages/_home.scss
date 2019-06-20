@@ -1,5 +1,8 @@
 // Finder Section
 .s-finder {
+    @include media-breakpoint-down(sm){
+        display: none;
+    }
     min-height: 34rem;
     background: white url(../images/backgrounddots.png) no-repeat center;
     background-size: cover;
@@ -61,7 +64,6 @@
     background: $light-gray url(../images/backgrounddots.png) no-repeat center;
     background-size: cover;
     min-height: 30rem;
-    padding: 2.5rem 6.25rem;
     flex-flow: row nowrap;
 
     h3 {
@@ -74,7 +76,7 @@
     .intro {
         display: flex;
         align-items: baseline;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
     .btn-next {
@@ -153,11 +155,11 @@
         }
 
         .event-day {
-            flex: 0 0 33.33%;
+            flex: 0 0 100%;
             display: flex;
             flex-flow: row;
             align-items: start;
-            margin-bottom: 90px;
+            margin-bottom: 10px;
 
             ul {
                 padding-left: 15px;
@@ -203,8 +205,15 @@
     }
 
     @include media-breakpoint-up(md) {
+        padding: 2.5rem 6.25rem;
+
         .news {
             display: block;
+        }
+
+        .event-day{
+            flex: 0 0 33.33%;
+            margin-bottom: 90px;
         }
     }
 
@@ -225,7 +234,7 @@
 
     .admissions-nav-container{
         background-color: rgba(0,63,114,.75);
-        padding:1rem 100px;
+        padding:1rem 15px;
         height:auto;
         display:block;
         position: relative;
@@ -355,6 +364,10 @@
             .admissions-card {
                 width:50%;
             }
+
+            .admissions-nav-container {
+                padding: 1rem 100px;
+            }
         }
     }
 }
@@ -373,7 +386,7 @@
         display:block;
         position: relative;
         height:auto;
-        padding:20px 100px;
+        padding:20px 15px;
 
         h2{
             margin-bottom:10rem;
@@ -468,6 +481,10 @@
         }
 
         @include media-breakpoint-up(md) {
+            .academics-container {
+                padding:20px 100px;
+            }
+
             .btn-list {
                 display:flex;
                 flex-flow: row wrap;
