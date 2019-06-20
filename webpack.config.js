@@ -12,7 +12,8 @@ module.exports = (args, env) => {
         devtool: "inline-source-map",
         devServer: {
             hot:true,
-            contentBase: './dist'
+            contentBase: './dist',
+            index: "page_template.html"
         },
 
         output: {

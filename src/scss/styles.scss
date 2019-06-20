@@ -16,6 +16,7 @@
 
 // Core styles
 @import "global";
+@import "navigation";
 @import "footer";
 
 // Components
@@ -38,67 +39,6 @@ h2{
     background-size:70%;
     background-position: center;
 }
-
-
-.nav-utility-container{
-    background-color: $light-gray;   
-}
-
-.nav-utility{
-    margin:0 100px;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    padding:0;
-    height:30px;
-     
-    .nav-link{
-        color:$black;
-        font: 'TitilliumText22LBold';
-        font-size:.65rem;
-        font-weight:700;
-        text-transform: uppercase;
-        margin:0 40px 0 0;
-        
-    }
-    .nav-link:hover{
-        color:$yellow;
-    }
-    .nav-utility-left, .nav-utility-right{
-        display:flex;
-        flex-direction:row;
-        justify-content: flex-start;
-        align-items: center;
-        
-    }
-    .nav-utility-right{
-        display:flex-end;
-        flex-grow:1;
-        flex-direction: row;
-        justify-content: flex-end;
-
-        .nav-link{
-            margin:0 0 0 40px;
-            color:$navy-blue;
-        }
-        input, input:focus{
-            margin:10px 0 0 0;
-            padding:0;
-            background:none;
-            border:none;
-            border-bottom:1px solid $dark-gray;
-            outline:none;
-            
-        }
-   
-    }
-    .nav-utility-left{
-        flex-grow:2;
-        display: flex-start;
-    }
-
-}
-
 
 .hero{
     background-repeat:no-repeat;
@@ -144,38 +84,164 @@ h2{
 
 }
 
-.primary-nav-container{
-    display:flex;
-    flex-direction: row;
-    height:108px;
-    background: linear-gradient(rgba(0,63,114,.75), rgba(0,63,114,.75));
-    justify-content: space-between;
-    padding:0 100px;
+.s-newsevents {
+    display: flex;
+    background: $light-gray url(../images/backgrounddots.png) no-repeat center;
+    background-size: cover;
+    min-height: 30rem;
+    padding: 2.5rem 6.25rem;
+    flex-flow: row nowrap;
 
-    .logo{
-        align-self: center;
-        color:$white;
+    h3 {
+        font-family: "TitilliumText22LBold";
+        font-size: 40px;
+        color: $navy-blue;
+        text-transform: capitalize;
+    }  
+
+    .intro {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: nowrap;
     }
 
-}
+    .btn-next {
+        font-size: 1.5rem;
+        font-family: 'TitilliumText22LMedium'; 
+        color: $purple;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-left: 3rem;
 
-.nav-primary{
-    display:flex;
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 11px solid $purple;
+            border-right: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            display: inline-block;
+            vertical-align: -.15em;
+            margin-left: 10px;
+        }
+    }
+    .news,
+    .events {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .news {
+        display: none;
+        flex-basis: 40%;
+
+        .newsfeed {
+            width: 100%;
+            border: 1px solid $purple;
+            min-height: 345px;
+            background: $white url(../images/backgrounddots.png) no-repeat  -102px -590px;
+            background-size: 250%;
+            position: relative;
+            padding: 30px;
+
+            .feed {
+                border: 1px solid $black;
+                min-height: 200px;
+                max-height: 100%;
+                width: 40%;
+                background-color: $white;
+                overflow-y: auto;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 30px;
+                background: transparent url(../images/bkg-student.png) no-repeat bottom center;
+                background-size: contain;
+                width: 40%;
+                height: 318px;
+            }
     
-    text-transform:uppercase;
-    font-size:1.25rem;
-    justify-content: space-between;
-    align-items: center;
-
-    .nav-link{
-    color:$white;
-
-    &:hover{
-        color:$yellow;
+        }
     }
+    .events {
+        flex-basis: 60%;
+
+        .event-day-list {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .event-day {
+            flex: 0 0 33.33%;
+            display: flex;
+            flex-flow: row;
+            align-items: start;
+            margin-bottom: 90px;
+
+            ul {
+                padding-left: 15px;
+            }
+
+            li {
+            }
+
+            h4{
+                font-family: "TitilliumText22LBold";
+                margin: 0;
+            }
+
+            a {
+                color: $purple;
+            }
+        }
+
+        .date {
+            flex: 0 0 48px;
+            line-height: 1;
+            height: 48px;
+            color: $dark-gray;
+            background-color: $white;
+            border: 2px solid $dark-gray;
+            text-align: center;
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 8px 0 0;
+
+            .date-month {
+                font-size: 9.875px;
+            }
+
+            .date-day {
+                font-family: "TitilliumText22LBold";
+                font-size: 24px;
+                line-height: 1.2;
+            }
+        }
+
+
+    }
+
+    @include media-breakpoint-up(md) {
+        .news {
+            display: block;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .newsfeed {
+            min-height: 379px;
+        }
     }
 }
-
 
 .s-admissions{
     background-image: url(../images/backgrounddots.png);
@@ -183,26 +249,24 @@ h2{
     background-size:50%;
     background-position: top left;
     margin:0 0 40px 0; 
-       
 }
 
 .admin-nav-container{
-    background: linear-gradient(rgba(0,63,114,.75), rgba(0,63,114,.75));
+    background-color: rgba(0,63,114,.75);
     padding:1rem 100px;
     height:auto;
     display:block;
     position: relative;
 
-    &:after{
+    &::after{
         content: "";
-        background: url(../images/background-admissions.png) no-repeat;
+        background: url(../images/background-admissions.png) no-repeat center;
+        background-size: cover;
         opacity: 0.3;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
-        background-size: 100%;
-
         position: absolute;
         z-index: -1; 
     }
@@ -214,29 +278,39 @@ h2{
 }
 
 .admin-nav{
+    @include list-unstyled;
     display:flex;
-    list-style:none;
     justify-content: space-between;
     padding-inline-start:0px;
-    
+
+    li {
+        flex: 1 0 100%;
+        padding: 0 18px;
+    }
 
     button{
-        display:flex;
+        font-family: 'TitilliumText22LBold';
+        display: flex;
         flex-direction: column;
-        background:none;
-        padding:1.5rem 4rem;
-        color:$white;
+        background: none;
+        padding: 1.5rem;
+        color: $white;
         text-transform: uppercase;
         font-size:1.2rem;
         border: 2px solid $white; 
         margin:10px 0 50px 0;
         align-items: center;
-        width:15rem;
-        
+        width: 100%;
 
         &:hover{
             color:$yellow;
             border-color:$yellow;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        li {
+            flex-basis: 25%;
         }
     }
 
@@ -269,7 +343,6 @@ h2{
     width:42%;
     position:relative;
     min-height:360px;
-
     -moz-box-shadow:    2px 2px 6px 0px $gray;
     -webkit-box-shadow: 2px 2px 6px 0px $gray;
     box-shadow:         2px 2px 6px 0px $gray;
