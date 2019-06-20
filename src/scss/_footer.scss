@@ -23,6 +23,10 @@
     .btn {
         display: inline-block;
         margin-bottom: .5em;
+        font-family: "TitilliumText22LBold";
+        font-size: 24px;
+        padding: 8px; 
+        line-height: 1;
 
         &.btn-white {
             background-color: white;
@@ -93,6 +97,38 @@
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;   
+        }
+    }
+
+    .social {
+        .btn {
+            padding: 7px; 
+        }
+
+        .icon {
+            overflow: hidden;
+            display: block;
+            width: 36px;
+            height: 36px;
+            background: transparent url(../images/sprite-social.svg) no-repeat top left;
+            background-size: 72px 288px;
+            text-indent: -999em;
+
+            @include hover-focus-active {
+                background-position-x: -36px;
+            }
+        }
+
+        .icon-facebook {
+            background-position-y: -36px;
+        }
+
+        .icon-twitter {
+            background-position-y: -72px;
+        }
+
+        .icon-youtube {
+            background-position-y: -144px;
         }
     }
 
