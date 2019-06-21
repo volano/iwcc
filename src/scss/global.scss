@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: project-color("blue");
+}
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+p {}
+strong, b {}
+em, i {}
+
+blockquote {
+    display: block;
+    border-left: 1px solid #04202e;
+    border-right: 1px solid #04202e;
+    padding: 32px 40px;
+
+    @include media-breakpoint-up (md) {
+        float: right;
+        max-width: 20rem;
+    }
+}
