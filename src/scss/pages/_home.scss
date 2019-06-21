@@ -570,7 +570,7 @@
         margin-bottom: 20px;
 
         .center-image {
-            display: none;
+            display: block;
         }
 
         img{
@@ -618,6 +618,18 @@
             content:"Shenendoah, IA";
         }
     }
+
+.sidebar{
+        height:300px;
+        position:fixed;
+        
+    .sidebar-body{
+        background-color: $green;
+
+    }
+
+
+}
 
     @include media-breakpoint-up(sm){
         .center-panels{
