@@ -1,3 +1,42 @@
+.btn-action {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    color: $white;
+    position: relative;
+    border: 2px solid $white;
+    border-bottom: 0;
+    line-height: 1;
+    outline: 0;
+
+    &:hover{
+        color:$yellow;
+        border-color:$yellow;
+
+        .ribbon::before,
+        .ribbon::after {
+            border-color: $yellow
+        }
+    }
+
+    .ribbon {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1 1 auto;
+            height: 0;
+            border-bottom: 2px solid $white;
+        }
+    }
+}
+
 // Finder Section
 .s-finder {
     @include media-breakpoint-down(sm){
@@ -159,9 +198,6 @@
                 padding-left: 15px;
             }
 
-            li {
-            }
-
             h4{
                 font-family: "TitilliumText22LBold";
                 margin: 0;
@@ -285,52 +321,20 @@
 
         .btn-action{
             font-family: 'TitilliumText22LBold';
-            display: flex;
-            flex-direction: column;
-            background: none;
             padding: 1.5rem;
-            color: $white;
             text-transform: uppercase;
             font-size:1.25rem;
-            line-height: 1;
-            border: 2px solid $white;
-            border-bottom: 0;
             margin:10px 0 50px 0;
             align-items: center;
             width: 100%;
-            position: relative;
-
-            &:hover{
-                color:$yellow;
-                border-color:$yellow;
-
-                .ribbon::before,
-                .ribbon::after {
-                    border-color: $yellow
-                }
-            }
 
             .ribbon {
-                position: absolute;
                 bottom: calc(-.375rem + 1px);
-                width: 100%;
-                left: 0;
-                display: flex;
-                justify-content: stretch;
-                align-items: center;
 
                 .subhead {
                     padding: 0 10px;
                     font-size: .75rem;
                     text-transform: none;
-                }
-
-                &::before,
-                &::after {
-                    content: "";
-                    flex: 1 1 auto;
-                    height: 0;
-                    border-top: 2px solid $white;
                 }
             }
         }
@@ -467,76 +471,98 @@
 
         .btn-list{
             margin-bottom:0rem;
+            align-content: stretch;
 
-            .btn-list-item{
-                display: block;
-                width: 100%;
+            .btn-action{
                 margin-bottom:80px;
+                justify-content: center;
                 color:$white;
                 background:none;
-                box-shadow: 0 0 0 2px $white;
-                font-size:1.6rem;
-                height:10rem;
-                padding: 1.5rem 1.8rem 3.75rem 1.8rem;
-                position: relative;
+                font-size: 1.6rem;
+                padding: .5rem 1.8rem 4.5rem 1.8rem;
+                border-width: 5px;
 
                 &:hover{
                     color:$yellow;
-                    box-shadow: 0 0 0 2px $yellow;
                 }
 
-                &::after {
+                .ribbon {
+                    bottom: -45px;
+                    &:before,
+                    &::after {
+                        border-top: 15px solid $green;
+                        border-bottom-width: 5px;
+                    }
+                }
+
+                .icon {
                     background: $white url(../images/sprite-academics.gif) no-repeat 0 0;
                     content: " ";
-                    position: absolute;
-                    bottom: -55px;
-                    left: 50%;
                     height: 110px;
                     width: 110px;
                     border-radius: 100px;
                     background-size: 100%;
-                    transform: translateX(-50%);
+                    margin: 0 10px;
                 }
             }
 
-            .business{
-                border-bottom: 10px solid $green;
+            .business .ribbon::before,
+            .business .ribbon::after
+            {
+                border-top-color: $green;
             }
 
             .industrial{
-                border-bottom: 10px solid $orange;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: $orange;
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -110px;
                 }
             }
             .communication{
-                border-bottom: 10px solid $yellow;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: $yellow;
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -220px;
                 }
             }
             .health{
-                border-bottom: 10px solid $red;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: $red;
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -330px;
                 }
             }
             .science{
-                border-bottom: 10px solid $purple;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: $purple;
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -440px;
                 }
             }
-            .social{
-                border-bottom: 10px solid $blue;
 
-                &::after{
+            .social{
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: $blue;
+                }
+
+                .icon{
                     background-position-y: -550px;
                 }
+
             }
         }
     }
@@ -549,7 +575,7 @@
                 flex-flow: row wrap;
                 justify-content: space-between;
     
-                .btn-list-item {
+                .btn-action {
                     width: 45%;
                 }
             }
@@ -558,7 +584,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        .academics-container .btn-list .btn-list-item {
+        .academics-container .btn-list .btn-action {
             width: 30%;
         }
     }
