@@ -5,6 +5,8 @@ const webpack = require("webpack")
 // Plugin Constants
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (args, env) => {
     return {
@@ -56,19 +58,6 @@ module.exports = (args, env) => {
                     }
                 },
 
-                // Image files
-                {
-                    test: /\.(jpg|png|gif|jpeg|svg)$/,
-                    use: {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[contenthash:8].[ext]',
-                            outputPath: "images",
-                            publicPath: "/images"
-                        }
-                    }
-                },
-
                 // Font files
                 {
                     test: /fonts\/.*\.(woff2?|svg|eot|ttf)/,
@@ -80,6 +69,21 @@ module.exports = (args, env) => {
                         }
                     }
                 },
+
+                // Image files
+                {
+                    test: /\.(jpg|png|gif|jpeg|svg)$/,
+                    exclude: [ path.resolve(__dirname, "src/fonts") ],
+                    use: {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[contenthash:8].[ext]',
+                            outputPath: "images",
+                            publicPath: "/images"
+                        }
+                    }
+                },
+
                 // Handlebars templates
                 { 
                     test: /\.hbs$/, 
@@ -88,6 +92,16 @@ module.exports = (args, env) => {
             ],  
         },
         plugins: [
+            new CopyWebpackPlugin([
+                {
+                    from: "home",
+                    to: path.join(__dirname, "dist/images/home"),
+                    context: "images"
+                }
+            ]),
+            new CleanWebpackPlugin({
+                verbose: true
+            }),
             new HtmlWebpackPlugin({
                 filename: 'page_template.html',
                 template: './html/home.hbs'
