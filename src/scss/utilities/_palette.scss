@@ -1,0 +1,30 @@
+.palette {
+    display: flex;
+    flex-flow: row wrap;
+
+    .swatch {
+        flex: 0 1 15%;
+        min-height: 4rem;
+        padding: 3em .3em .3em;
+        margin: 0 10px 1rem;
+        color: white;
+
+        $i:0;
+        @each $color, $value in $project-colors {
+            &:nth-child(#{$i*1}){
+                background-color: $value;
+                &::before,
+                &::after {
+                    display: block;
+                }
+                &::before {
+                    content: "#{$value}";
+                }
+                &::after {
+                   content: "rgb(#{red($value)}, #{green($value)}, #{blue($value)})";
+                }
+            }
+            $i: $i+1;
+        }
+    }
+}

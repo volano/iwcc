@@ -1,0 +1,3 @@
+@function project-color ($colorName) {
+    @return map-get($project-colors, $colorName);
+}
