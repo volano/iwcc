@@ -742,31 +742,38 @@
     top:200px;
     right:-275px;
     z-index:10000;
-    border:solid 5px $green;
+    border:solid 5px project-color("green");
     border-radius:10px;
     padding: 3px;
 
     .close{
+
         &:before {
-            content: 'X'; // here is your X(cross) sign.
-            color: #fff;
-            font-weight: 700;
-            font-family: Arial, sans-serif;
-            font-size:24px;
+            content:'';
             position:absolute;
             top:-10px;
             left:-10px;
-            background-color: $green;
+            background-color: project-color("green");
             width:32px;
             height:32px;
-            text-align: center;
             border-radius:100px;
-            box-shadow: 2px 2px 8px $black;
-            
+            box-shadow: 2px 2px 8px project-color("black");
             }
+            &:after{
+            content: '\0353'; // here is your X(cross) sign.
+            color: #fff;
+            font-weight: 200;
+            font-size:72px;
+            position:absolute;
+            width: 32px;
+            top:-74px;
+            left: 6px;
+            margin-left: 0;
+            }
+
     }
 .sidebar-body{
-    background-color: $green;
+    background-color: project-color("green");
     font-size:2rem; 
     color:$white;
     padding:1rem 0 2rem 0;

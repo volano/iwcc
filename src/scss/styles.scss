@@ -37,6 +37,10 @@
 // Pages
 @import "pages/home";
 
+.hide{
+   display:none; 
+}
+
 h2{
     font-size:2rem;
 }
@@ -106,9 +110,9 @@ main {
         }
 
         .play-button{
-            color:$yellow;
+            color:project-color("yellow");
             font-weight:600;
-            border:solid 2px $yellow;
+            border:solid 2px project-color("yellow");
             padding:1.5rem 2.5rem;
             margin:1.5rem 0 1.5rem 0;
             font-size:1.5rem;
@@ -121,7 +125,7 @@ main {
                 content: "";
                 width: 0;
                 height: 0;
-                border-left: 11px solid $yellow;
+                border-left: 11px solid project-color("yellow");
                 border-right: 0;
                 border-top: 12px solid transparent;
                 border-bottom: 12px solid transparent;
