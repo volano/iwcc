@@ -15,7 +15,7 @@ module.exports = (args, env) => {
         devServer: {
             hot:true,
             contentBase: './dist',
-            index: "page_template.html"
+            index: "home.html"
         },
 
         output: {
@@ -102,10 +102,21 @@ module.exports = (args, env) => {
             new CleanWebpackPlugin({
                 verbose: true
             }),
+
+            // Pages to emit
             new HtmlWebpackPlugin({
                 filename: 'page_template.html',
                 template: './html/home.hbs'
             }),
+            new HtmlWebpackPlugin({
+                filename: 'home.html',
+                template: './html/home.hbs'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'styleguide.html',
+                template: './html/styleguide.hbs'
+            }),
+
             new MiniCssExtractPlugin({
                 filename: '[name].css',
                 chunkFilename: '[id].css',

@@ -1,8 +1,6 @@
 <html>
     <head>
-        <title>Iowa Western Community College</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {{> partials/head }}
     </head>
     <body>
         {{> partials/header }}
@@ -129,16 +127,28 @@
                     <h2>Admissions</h2>
                     <ul class="admissions-nav">
                         <li>
-                            <button>Apply</button>
+                            <a href="/apply/" class="btn btn-action">
+                                Apply
+                                <div class="ribbon"><span class="subhead">It's Free</span></div>
+                            </a>
                         </li>
                         <li>
-                            <button>Visit</button>
+                            <a href="/apply/" class="btn btn-action">
+                                Visit
+                                <div class="ribbon"><span class="subhead">Join Us</span></div>
+                            </a>
                         </li>
                         <li>
-                            <button>Register</button>
+                            <a href="/apply/" class="btn btn-action">
+                                Register
+                                <div class="ribbon"><span class="subhead">Sign Up</span></div>
+                            </a>
                         </li>
                         <li>
-                            <button>Graduate</button>
+                            <a href="/apply/" class="btn btn-action">
+                                Graduate
+                                 <div class="ribbon"><span class="subhead">The World is Waiting</span></div>
+                           </a>
                         </li>
                     </ul>
                 </div>
@@ -157,25 +167,34 @@
                 </div>
             </section>
 
-            <section class="s-outreach">
-                <div class="video">
-
-                </div>
-                <div class="video">
-                    
-                </div>    
-            </section>
-
             <section class="s-academics">
                 <div class="academics-container">
                     <h2>Academics</h2>
                     <div class="btn-list">
-                        <button type="button" class="btn btn-list-item business">Business</button>
-                        <button type="button" class="btn btn-list-item industrial">Industrial Technology<br>and Transportation</button>
-                        <button type="button" class="btn btn-list-item communication">Communication<br>and Fine Arts</button>
-                        <button type="button" class="btn btn-list-item health">Health</button>
-                        <button type="button" class="btn btn-list-item science">Science, Technology,<br>Engineering and Math</button>
-                        <button type="button" class="btn btn-list-item social">Social and<br>Behavioral Sciences</button>
+                        <a href="/academic-programs/business/" class="btn btn-action business">
+                            Business
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
+                        <a href="/academic-programs/industrial-technology-transportation" class="btn btn-action industrial">
+                            Industrial Technology and Transportation
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
+                        <a href="/academic-programs/coummincation-fine-arts/" class="btn btn-action communication">
+                            Communication and Fine Arts
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
+                        <a href="/academic-programs/health/" class="btn btn-action health">
+                            Health
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
+                        <a href="/academic-programs/stem/" class="btn btn-action science">
+                            Science, Technology, Engineering and Math
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
+                        <a href="/academic-programs/social-behavioral-sciences" class="btn btn-action social">
+                            Social and Behavioral Sciences
+                            <div class="ribbon"><div class="icon"></div></div>
+                        </a>
                     </div>
                 </div> 
             </section>
@@ -183,51 +202,48 @@
             <section class="s-featured">
                 <div class="featured-container">
                     <div class="featured-athletics featured-panel col-md-4">
-                        <img src="../images/reivers-logo.png" width="100%" class="img-fluid">
+                        <img src="/images/home/reivers-logo.png" width="100%" class="img-fluid">
                         <a href="https://GoReivers.com" target="_blank" class="btn">GoReivers.com</a>
                     </div>
                     <div class="featured-artscenter featured-panel col-md-4">
-                            <img src="../images/artscenter-logo.png" width="100%" class="img-fluid">
+                            <img src="/images/home/artscenter-logo.png" width="100%" class="img-fluid">
                         <a href="https://artscenter.iwcc.edu" target="_blank" class="btn">artscenter.iwcc.edu</a>
                     </div>
                     <div class="featured-river featured-panel col-md-4">
-                            <img src="../images/river-logo.png" width="100%" class="img-fluid">
+                            <img src="/images/home/river-logo.png" width="100%" class="img-fluid">
                         <a href="897theriver.com" target="_blank" class="btn">897theriver.com</a>
                     </div>
             </div>
             </section>
 
             <section class="s-centers">
-                <div class="centers-container">
                     <h2>Centers</h2>
                     <div class="center-panels">
                         <div class="center-panel">
-                            <a href="" class="btn clarinda">Clarinda<br>Center</a>
-                            <div class="center-image img-fluid">
-                                <img src="../images/center-image.png" width="100%">
+                            <a href="" class="btn clarinda">Clarinda Center</a>
+                            <div class="center-image">
+                                <img src="/images/home/center-image.png" class="img-fluid">
                             </div>
                         </div>
                             <div class="center-panel">
-                            <a href="" class="btn cass">Cass County<br>Center</a>
-                            <div class="center-image img-fluid">
-                                <img src="../images/center-image.png" width="100%">
+                            <a href="" class="btn cass">Cass County Center</a>
+                            <div class="center-image">
+                                <img src="/images/home/center-image.png" class="img-fluid">
                             </div>
                         </div>
                             <div class="center-panel">
-                            <a href="" class="btn shelby">Shelby County<br>Center</a>
-                            <div class="center-image img-fluid">
-                                <img src="../images/center-image.png" width="100%">
+                            <a href="" class="btn shelby">Shelby County Center</a>
+                            <div class="center-image">
+                                <img src="/images/home/center-image.png" class="img-fluid">
                             </div>
                         </div>
                             <div class="center-panel">
-                            <a href="" class="btn fremont">Page/Fremont County<br>Center</a>
-                            <div class="center-image img-fluid">
-                                <img src="../images/center-image.png" width="100%">
+                            <a href="" class="btn fremont">Page/Fremont County Center</a>
+                            <div class="center-image">
+                                <img src="/images/home/center-image.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
-                    
-                </div>
             </section>
         </section>
         </main>

@@ -1,6 +1,7 @@
 // Base setups
 @import "typography";
 @import "colors";
+@import "functions"; // Project Functions
 @import "variables";
 
 @import "~bootstrap/scss/functions";
@@ -11,12 +12,12 @@
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/images";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/utilities";
 
-//Mixins
-//Functions
+@import "utilities"; // Project Utilities
 
 // Core styles
 @import "global";
@@ -46,6 +47,38 @@ h2{
     background-size:70%;
     background-position: center;
 }
+
+
+// Primary Content Containers
+main {
+    &.page-full {
+        background: $white url(../images/backgrounddots.png) no-repeat center 50%;
+        background-size: cover;
+
+        .content {
+            padding: 20px 20px;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        margin-top: 155px;
+
+        &.page-full .content {
+            padding: 20px 3.125rem 9.25rem;
+        }
+    
+    }
+
+    @include media-breakpoint-up(lg){
+        &.page-full .content {
+            padding-left: 6.25rem;
+            padding-right: 6.25rem;
+        }
+    }
+
+    
+}
+
 
 .s-hero{
     height: 820px;

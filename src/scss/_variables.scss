@@ -1,5 +1,11 @@
 $font-family-sans-serif: 'TitilliumText22LRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; 
-$primary: $blue;
-$dark: $black;
+$primary: project-color("blue");
+$dark: project-color("black");
 $navbar-padding-y: 0;
 $navbar-padding-x: 0;
+$btn-border-radius: 0;
+$grid-gutter-width: 20px;
+
+$theme-colors: (
+    "lightgray": project-color("light-gray")
+)

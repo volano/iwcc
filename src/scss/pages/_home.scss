@@ -1,3 +1,42 @@
+.btn-action {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    color: $white;
+    position: relative;
+    border: 2px solid $white;
+    border-bottom: 0;
+    line-height: 1;
+    outline: 0;
+
+    &:hover{
+        color:project-color("yellow");
+        border-color:project-color("yellow");
+
+        .ribbon::before,
+        .ribbon::after {
+            border-color: project-color("yellow")
+        }
+    }
+
+    .ribbon {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1 1 auto;
+            height: 0;
+            border-bottom: 2px solid $white;
+        }
+    }
+}
+
 // Finder Section
 .s-finder {
     @include media-breakpoint-down(sm){
@@ -25,15 +64,15 @@
     }
 
     a {
-        color: $light-blue;
+        color: project-color("light-blue");
         display: block;
         font-family: "TitilliumText22LBold";
         font-size: 33px;
  
         &.active {
-            color: $blue;
+            color: project-color("blue");
             text-transform: uppercase;
-            border-bottom: 1px solid $light-blue;
+            border-bottom: 1px solid project-color("light-blue");
             font-size: 40px;
         }
     }
@@ -60,16 +99,13 @@
 
 // News and Events Section
 .s-newsevents {
-    display: flex;
-    background: $light-gray url(../images/backgrounddots.png) no-repeat center;
+    background: project-color("light-gray") url(../images/backgrounddots.png) no-repeat center;
     background-size: cover;
-    min-height: 30rem;
-    flex-flow: row nowrap;
 
     h3 {
         font-family: "TitilliumText22LBold";
         font-size: 40px;
-        color: $navy-blue;
+        color: project-color("navy-blue");
         text-transform: capitalize;
     }  
 
@@ -82,7 +118,7 @@
     .btn-next {
         font-size: 1.5rem;
         font-family: 'TitilliumText22LMedium'; 
-        color: $purple;
+        color: project-color("purple");
         text-transform: uppercase;
         display: inline-block;
         margin-left: 3rem;
@@ -91,7 +127,7 @@
             content: "";
             width: 0;
             height: 0;
-            border-left: 11px solid $purple;
+            border-left: 11px solid project-color("purple");
             border-right: 0;
             border-top: 12px solid transparent;
             border-bottom: 12px solid transparent;
@@ -102,8 +138,6 @@
     }
     .news,
     .events {
-        flex-grow: 0;
-        flex-shrink: 0;
         margin-left: 15px;
         margin-right: 15px;
     }
@@ -113,7 +147,7 @@
 
         .newsfeed {
             width: 100%;
-            border: 1px solid $purple;
+            border: 1px solid project-color("purple");
             min-height: 345px;
             background: $white url(../images/backgrounddots.png) no-repeat  -102px -590px;
             background-size: 250%;
@@ -147,7 +181,6 @@
         }
     }
     .events {
-        flex-basis: 60%;
 
         .event-day-list {
             display: flex;
@@ -165,16 +198,13 @@
                 padding-left: 15px;
             }
 
-            li {
-            }
-
             h4{
                 font-family: "TitilliumText22LBold";
                 margin: 0;
             }
 
             a {
-                color: $purple;
+                color: project-color("purple");
             }
         }
 
@@ -182,9 +212,9 @@
             flex: 0 0 48px;
             line-height: 1;
             height: 48px;
-            color: $dark-gray;
+            color: project-color("dark-gray");
             background-color: $white;
-            border: 2px solid $dark-gray;
+            border: 2px solid project-color("dark-gray");
             text-align: center;
             border-radius: 24px;
             overflow: hidden;
@@ -204,23 +234,44 @@
 
     }
 
+    @include media-breakpoint-up (sm) {
+        .events .event-day{
+            flex: 0 0 50%;
+        }
+    }
+
     @include media-breakpoint-up(md) {
+        min-height: 30rem;
+        display: flex;
+        flex-flow: row nowrap;
         padding: 2.5rem 6.25rem;
 
+        .news,
+        .events {
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    
         .news {
             display: block;
         }
 
-        .event-day{
-            flex: 0 0 33.33%;
-            margin-bottom: 90px;
+        .events {
+            flex-basis: 60%;
         }
+
     }
 
     @include media-breakpoint-up(lg) {
         .newsfeed {
             min-height: 379px;
         }
+
+        .events .event-day{
+            flex: 0 0 33.33%;
+            margin-bottom: 2.875rem;
+        }
+
     }
 }
 
@@ -260,39 +311,31 @@
 
     .admissions-nav{
         @include list-unstyled;
+        margin-left: -15px;
+        margin-right: -15px;
 
         li {
             flex: 1 0 100%;
             padding: 0 18px;
         }
 
-        button{
+        .btn-action{
             font-family: 'TitilliumText22LBold';
-            display: flex;
-            flex-direction: column;
-            background: none;
             padding: 1.5rem;
-            color: $white;
             text-transform: uppercase;
-            font-size:1.2rem;
-            border: 2px solid $white; 
+            font-size:1.25rem;
             margin:10px 0 50px 0;
             align-items: center;
             width: 100%;
 
-            &:hover{
-                color:$yellow;
-                border-color:$yellow;
-            }
-        }
+            .ribbon {
+                bottom: calc(-.375rem + 1px);
 
-        @include media-breakpoint-up(md){
-            display:flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-
-            li {
-                flex-basis: 25%;
+                .subhead {
+                    padding: 0 10px;
+                    font-size: .75rem;
+                    text-transform: none;
+                }
             }
         }
     }
@@ -309,9 +352,9 @@
             width: 100%;
             height: 100%;
             min-height:360px;
-            -moz-box-shadow:    2px 2px 6px 0px $gray;
-            -webkit-box-shadow: 2px 2px 6px 0px $gray;
-            box-shadow:         2px 2px 6px 0px $gray;
+            -moz-box-shadow:    2px 2px 6px 0px project-color("gray");
+            -webkit-box-shadow: 2px 2px 6px 0px project-color("gray");
+            box-shadow:         2px 2px 6px 0px project-color("gray");
             position:relative;
         }
 
@@ -342,14 +385,14 @@
                 width:14rem;
 
                 &:hover{
-                    color:$yellow;
-                    border-color:$yellow;
+                    color:project-color("yellow");
+                    border-color:project-color("yellow");
                 }
             }
 
             .play{
-                color:$yellow;
-                border-color:$yellow;
+                color:project-color("yellow");
+                border-color:project-color("yellow");
 
                 &:hover{
                     color:$white;
@@ -357,17 +400,38 @@
                 }
             }
         }
+    }
 
-        @include media-breakpoint-up(md){
+    @include media-breakpoint-up(sm){
+        .admissions-nav {
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            li {
+                flex-basis: 50%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .admissions-panels {
             display:flex;
             flex-direction: row;
-            .admissions-card {
-                width:50%;
-            }
+        }
 
-            .admissions-nav-container {
-                padding: 1rem 100px;
-            }
+        .admissions-card {
+            width:50%;
+        }
+
+        .admissions-nav-container {
+            padding: 1rem 100px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .admissions-nav li {
+            flex-basis: 25%;
         }
     }
 }
@@ -407,104 +471,127 @@
 
         .btn-list{
             margin-bottom:0rem;
+            align-content: stretch;
 
-            .btn-list-item{
-                display: block;
-                width: 100%;
+            .btn-action{
                 margin-bottom:80px;
+                justify-content: center;
                 color:$white;
                 background:none;
-                box-shadow: 0 0 0 2px $white;
-                font-size:1.6rem;
-                height:10rem;
-                padding: 1.5rem 1.8rem 3.75rem 1.8rem;
-                position: relative;
+                font-size: 1.6rem;
+                padding: .5rem 1.8rem 4.5rem 1.8rem;
+                border-width: 5px;
 
                 &:hover{
-                    color:$yellow;
-                    box-shadow: 0 0 0 2px $yellow;
+                    color:project-color("yellow");
                 }
 
-                &::after {
+                .ribbon {
+                    bottom: -45px;
+                    &:before,
+                    &::after {
+                        border-top: 15px solid project-color("green");
+                        border-bottom-width: 5px;
+                    }
+                }
+
+                .icon {
                     background: $white url(../images/sprite-academics.gif) no-repeat 0 0;
                     content: " ";
-                    position: absolute;
-                    bottom: -55px;
-                    left: 50%;
                     height: 110px;
                     width: 110px;
                     border-radius: 100px;
                     background-size: 100%;
-                    transform: translateX(-50%);
+                    margin: 0 10px;
                 }
             }
 
-            .business{
-                border-bottom: 10px solid $green;
+            .business .ribbon::before,
+            .business .ribbon::after
+            {
+                border-top-color: project-color("green");
             }
 
             .industrial{
-                border-bottom: 10px solid $orange;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("orange");
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -110px;
                 }
             }
             .communication{
-                border-bottom: 10px solid $yellow;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("yellow");
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -220px;
                 }
             }
             .health{
-                border-bottom: 10px solid $red;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("red");
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -330px;
                 }
             }
             .science{
-                border-bottom: 10px solid $purple;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("purple");
+                }
 
-                &::after{
+                .icon{
                     background-position-y: -440px;
                 }
             }
-            .social{
-                border-bottom: 10px solid $blue;
 
-                &::after{
+            .social{
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("blue");
+                }
+
+                .icon{
                     background-position-y: -550px;
                 }
+
             }
         }
+    }
 
-        @include media-breakpoint-up(md) {
-            .academics-container {
-                padding:20px 100px;
-            }
-
+    @include media-breakpoint-up(md) {
+        .academics-container {
+            padding:20px 100px;
             .btn-list {
                 display:flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
-
-                .btn-list-item {
+    
+                .btn-action {
                     width: 45%;
                 }
             }
+    
         }
-        @include media-breakpoint-up(lg) {
-            .btn-list .btn-list-item {
-                width: 30%;
-            }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .academics-container .btn-list .btn-action {
+            width: 30%;
         }
     }
 }
 
 .s-featured {
-    background:$dark-gray;
+    background:project-color("dark-gray");
 
     .featured-container {
         @include make-container();
@@ -521,13 +608,13 @@
     }
 
     .featured-athletics{
-        background:$blue;
+        background:project-color("blue");
     }
     .featured-artscenter{
-        background:$green;
+        background:project-color("green");
     }
     .featured-river{
-        background:$red;
+        background:project-color("red");
     }
 
     .btn{
@@ -537,8 +624,8 @@
         
 
         &:hover{
-            border-color:$yellow;
-            color:$yellow;
+            border-color:project-color("yellow");
+            color:project-color("yellow");
             text-decoration: none;
         }
     }
@@ -558,8 +645,8 @@
     background-repeat:no-repeat;
     background-position: center;
     background-size:cover;
-    padding: 2rem 0 0;  
-    color:$blue;
+    padding: 2rem 15px 0;  
+    color:project-color("blue");
 
     .center-panels{
         margin: 2rem 0 4rem;
@@ -584,16 +671,17 @@
             text-align: center;
             width:100%;
             background-color:$white;
-            border: 3px solid $blue;
-            color:$blue;
+            border: 3px solid project-color("blue");
+            color:project-color("blue");
             font-size: 2rem;
             padding: 2rem 0;
             font-family:'TitilliumText22LBold';
+            min-height: 11rem;
 
             &::after{
                 display: block;
-                color: $blue;
-                border:1px solid $blue;
+                color: project-color("blue");
+                border:1px solid project-color("blue");
                 padding:.25em 20px;
                 font: 1.0625rem/1.5 'TitilliumText22LBold';
                 position:absolute;
@@ -602,7 +690,6 @@
                 transform: translateX(-50%);
                 text-align: center;
                 background-color:$white;
-
             }
         }
         .clarinda::after{
@@ -635,12 +722,16 @@
     }
 
     @include media-breakpoint-up (lg) {
-        .center-image {
-            display: block;
-        }
+        padding: 2rem 100px 0;  
 
         .center-panel {
-            width:25%;
+            width:25%;    
+        }
+    }
+
+    @include media-breakpoint-up (xl) {
+        .center-panel .center-image {
+            display: block;
         }
     }
 }

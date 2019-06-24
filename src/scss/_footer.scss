@@ -1,6 +1,6 @@
 .footer-site{
-    background-color: $blue;
-    color: white;
+    background-color: project-color("blue");
+    color: $white;
     padding: 100px 0;
     position: relative;
 
@@ -16,7 +16,7 @@
         color: $white;
 
         @include hover-focus-active {
-            color: $light-gray;
+            color: project-color("light-gray");
         }
     }
 
@@ -30,7 +30,7 @@
 
         &.btn-white {
             background-color: white;
-            color: $blue;
+            color: project-color("blue");
             border: 0;
             padding: $input-padding-x $input-padding-y;
             border-radius: $input-border-radius;

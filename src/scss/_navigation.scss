@@ -4,7 +4,7 @@
     width: 100%;
     align-items: flex-start;
     position: relative;
-    background-color: $navy-blue;
+    background-color: project-color("navy-blue");
     padding: 10px;
 
     .logo{
@@ -23,7 +23,7 @@
     }
 
     @include media-breakpoint-up(md) {
-        background-color: transparentize($navy-blue, .25);
+        background-color: transparentize(project-color("navy-blue"), .25);
         padding: 0;
     }
 }
@@ -38,7 +38,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $black;
+    background-color: project-color("black");
     height: 100vh;
     overflow-y: auto;
     justify-content: flex-start;
@@ -72,7 +72,7 @@
             text-transform: uppercase;
 
             @include hover-focus-active{
-                color:$yellow;
+                color:project-color("yellow");
             }
         }
 
@@ -83,7 +83,7 @@
     }
 
     @include media-breakpoint-up(md) {
-        background-color: $light-gray;
+        background-color: project-color("light-gray");
 
         .nav-utility{
             flex-direction: row;
@@ -99,7 +99,7 @@
                 margin-left: auto;
 
                 .nav-link{
-                    color: $navy-blue;
+                    color: project-color("navy-blue");
                 }
 
                 input,
@@ -108,7 +108,7 @@
                     padding:0;
                     background:none;
                     border:none;
-                    border-bottom:1px solid $dark-gray;
+                    border-bottom:1px solid project-color("dark-gray");
                     outline:none;
                 }
 
@@ -138,7 +138,7 @@
             color:$white;
 
             @include hover-focus-active{
-                color:$yellow;
+                color:project-color("yellow");
             }
         }
     }
