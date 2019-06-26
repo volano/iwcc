@@ -1,0 +1,23 @@
+.titlebar-container{
+    padding:0 100px;
+    display:flex;
+    flex-direction: row;
+    background-color:$white;
+
+    h2{
+        margin: auto 0 auto 10px;
+    }    
+}
+
+.title-logo{
+        margin: 10px 5px 10px 30px;
+        background: transparent url(../images/title-logo.png) no-repeat center;
+        background-size: contain;
+        align-self: center;
+        color:$white;
+        max-height:51px;
+        max-width:84px;
+        height: 51px;
+        width:100%;
+}
+

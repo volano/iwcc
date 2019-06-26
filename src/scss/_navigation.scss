@@ -184,3 +184,99 @@
     }
 }
 
+
+// Styles for the blue navigation under the hero
+.nav-section{
+    background-color: project-color("blue");
+    .blue-bar{
+        display:flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        padding: 20px 100px;
+        color:project-color("white");
+        &:hover{
+            color:project-color("yellow");
+        }
+
+        .btn{
+            width:14%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            color:project-color("white");
+            
+            .icon{
+                max-height: 80px;
+                max-width:  80px;
+                margin-bottom:.5rem;
+                height:80px;
+                width:80px;
+            }
+
+            .apply{
+                background: project-color("white") url(../images/icon-apply.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-apply.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .why{
+                background: project-color("white") url(../images/icon-why.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-why.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .financial{
+                background: project-color("white") url(../images/icon-financial.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-financial.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .service{
+                background: project-color("white") url(../images/icon-service.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-service.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .PTK{
+                background: project-color("white") url(../images/icon-ptk.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-ptk.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .calendar{
+                background: project-color("white") url(../images/icon-calendar.png) no-repeat center 50%;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-calendar.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+            .search{
+                background: project-color("white") url(../images/icon-search.png) no-repeat center 50% ;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-search.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+        }
+        
+    }
+}

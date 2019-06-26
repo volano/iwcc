@@ -23,6 +23,7 @@
 @import "global";
 @import "navigation";
 @import "footer";
+@import "titlebar";
 
 // Components
 @import "components/accordion";
@@ -36,6 +37,7 @@
 
 // Pages
 @import "pages/home";
+@import "pages/academics";
 
 .hide{
    display:none; 

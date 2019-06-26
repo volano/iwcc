@@ -562,7 +562,17 @@
                 .icon{
                     background-position-y: -550px;
                 }
+            }
+            .general{
+                line-height:3.15rem;
+                .ribbon::before,
+                .ribbon::after{
+                    border-top-color: project-color("dark-gray");
+                }
 
+                .icon{
+                    background-position-y: -660px;
+                }
             }
         }
     }

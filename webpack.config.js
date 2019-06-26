@@ -116,10 +116,14 @@ module.exports = (args, env) => {
                 filename: 'styleguide.html',
                 template: './html/styleguide.hbs'
             }),
+            new HtmlWebpackPlugin({
+                filename: 'academics.html',
+                template: './html/academics.hbs'
+            }),
 
             new MiniCssExtractPlugin({
                 filename: '[name].css',
-                chunkFilename: '[id].css',
+           chunkFilename: '[id].css',
                 outputPath: "css"
             }),
             new webpack.HotModuleReplacementPlugin()
