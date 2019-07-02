@@ -5,16 +5,6 @@
     <body>
         {{> partials/header }}
         <main class="p-home">
-            <div class="sidebar">
-                <div class="close"></div>
-                <div class="sidebar-body">
-                    <img src="../images/home/sidebar.png">
-                    <ul>
-                        <li>Psychology Degree</li>
-                        <li>Sociology Degree</li>
-                    </ul>
-                </div>
-            </div>
             <section class="s-hero">
                 <div class="hero-caption">
                     <p>alt description</p>
@@ -121,7 +111,17 @@
                     </div>
                 </div>
             </section>
-
+            <section class="sidebar">
+                <div class="mobile-medallion"></div>
+                <div class="close hide-mobile"></div>
+                <div class="sidebar-body">
+                    <a href="#"><img src="../images/home/sidebar.png" class="img-fluid"></a>
+                    <ul class="hide-mobile">
+                        <li>Psychology Degree</li>
+                        <li>Sociology Degree</li>
+                    </ul>
+                </div>
+            </section>
             <section class="s-admissions">
                 <div class="admissions-nav-container">
                     <h2>Admissions</h2>
@@ -216,7 +216,7 @@
             </div>
             </section>
 
-            <section class="s-centers">
+            <section class="s-centers hide-mobile">
                     <h2>Centers</h2>
                     <div class="center-panels">
                         <div class="center-panel">

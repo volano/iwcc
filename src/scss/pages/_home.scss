@@ -454,6 +454,7 @@
 
         h2{
             margin-bottom:10rem;
+            color:project-color("white");
         }
 
         &::after {
@@ -797,3 +798,121 @@
 }
 }
 
+@include media-breakpoint-down(sm){
+
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .s-newsevents{
+        order:3;
+    }
+
+    .s-admissions{
+        order:2;
+    }
+
+    .s-academics{
+        order:4;
+    }
+
+    .s-featured{
+        order:4;
+    }
+
+    .s-centers{
+        order:4;
+    }
+
+    .hide-mobile{
+        display:none;
+    }
+
+    .mobile-medallion {
+        width: 85px;
+        height: 85px;
+        overflow: hidden;
+        margin: -125px 0;
+        padding: 0;
+        text-align: center;
+        background: transparent url(../images/logo-medallion.png) no-repeat center;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-indent: -9999em;
+    }
+
+    .s-hero{
+        max-height:400px;
+    }
+
+    .sidebar{
+        background-color:project-color("green");
+        position:relative;
+        top:0;
+        right:0;
+        border:none;
+        border-radius:0px;
+        padding: 0px;
+        order: 1;
+        
+        img{
+            max-height:200px;
+        }
+    }
+
+
+    .s-admissions{
+        margin-bottom:0;
+        .admissions-nav-container{
+            padding-bottom: 5rem; 
+        }
+
+        .admissions-panels{
+            margin-top: -6rem;
+            .become-a-reiver, .campus-map{
+                background-size:cover;
+                height: 25%;
+                min-height: 200px;
+            }
+        }
+    }
+
+    .s-academics{
+         .academics-container { 
+             h2 {
+                margin-bottom: 2.5rem;
+                color:project-color("white");
+             }
+            }
+        }
+
+        .s-featured{
+            .btn{
+                margin-top: 30px;
+            }
+        }
+
+    }
+
+
+
+    @include media-breakpoint-down(lg){
+        .s-centers{
+            .center-panel{
+                .btn{
+                    font-size:1rem;
+                    &:after{
+                        font: .8rem/.85 'TitilliumText22LBold';  
+                    }
+                    min-height: 8rem;
+                }
+                .center-image{
+                    display:none
+                }
+            }
+        }
+    }

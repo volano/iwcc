@@ -151,3 +151,37 @@
         }
     }
 }
+
+
+@include media-breakpoint-down(sm){
+    .footer-site{
+        .nav-list{
+            margin-bottom:0px;
+        }
+        .container{
+            padding-left:25px;
+            padding-right:25px;
+        }
+
+        .colophon{
+            margin-top:3rem;
+            font-size:12px;
+            .site-name {
+               white-space:nowrap;
+               
+           }
+           .established{
+               white-space: nowrap; 
+                              
+           }
+            .copyright{
+                white-space:nowrap;   
+                position: absolute;
+                bottom:60px;
+                          
+            }
+            
+        }
+    }
+
+}
