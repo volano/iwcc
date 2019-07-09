@@ -99,6 +99,13 @@ module.exports = (args, env) => {
                     context: "images"
                 }
             ]),
+            new CopyWebpackPlugin([
+                {
+                    from: "about",
+                    to: path.join(__dirname, "dist/images/about"),
+                    context: "images"
+                }
+            ]),
             new CleanWebpackPlugin({
                 verbose: true
             }),
@@ -120,6 +127,11 @@ module.exports = (args, env) => {
                 filename: 'academics.html',
                 template: './html/academics.hbs'
             }),
+            new HtmlWebpackPlugin({
+                filename: 'about.html',
+                template: './html/about.hbs'
+            }),
+
 
             new MiniCssExtractPlugin({
                 filename: '[name].css',

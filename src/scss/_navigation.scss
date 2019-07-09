@@ -276,6 +276,43 @@
                 }
              } 
 
+             .mission{
+                background: project-color("white") url(../images/icon-banner.png) no-repeat center 50% ;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-banner.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+             .reiver{
+                background: project-color("white") url(../images/icon-reiver.png) no-repeat center 50% ;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-reiver.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+             .creds{
+                background: project-color("white") url(../images/icon-creds.png) no-repeat center 50% ;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-creds.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+             .effect{
+                background: project-color("white") url(../images/icon-institution.png) no-repeat center 50% ;
+                background-size: contain;  
+                &:hover{
+                    background: project-color("yellow") url(../images/icon-institution.png) no-repeat center 50%;
+                    background-size: contain;  
+                }
+             } 
+
+
         }
         
     }
