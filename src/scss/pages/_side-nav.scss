@@ -1,0 +1,24 @@
+.p-side-nav{
+    background: none!important;
+
+    .page-title{
+        &:before{
+            content:"Side Nav Template";
+        }
+    }
+
+
+    .side-nav-container{
+    .page-content{
+        h2{
+            margin-bottom:1rem;
+            color: project-color("navy-blue");
+            font-weight:700;
+        }
+        p {
+          font-size:1.25rem;
+          font-family:TitilliumText22LBold;
+        }
+    }
+    }
+}

@@ -131,6 +131,10 @@ module.exports = (args, env) => {
                 filename: 'about.html',
                 template: './html/about.hbs'
             }),
+            new HtmlWebpackPlugin({
+                filename: 'side-nav.html',
+                template: './html/side-nav.hbs'
+            }),
 
 
             new MiniCssExtractPlugin({

@@ -317,3 +317,62 @@
         
     }
 }
+
+
+.side-nav-container{
+    background-color:transparent;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .left-nav{
+        ul{
+    margin:.5rem 0 0 0;
+    list-style: none;  
+    padding:0;  
+    width:100%;
+    
+    a{
+        text-decoration: underline;
+        color:project-color("black");
+        &:hover, .active{
+            color:project-color("yellow");
+            border-left-color: project-color("yellow");
+            background-color: project-color("blue");
+        }
+    }
+
+    li{
+        border-left: solid 5px project-color("blue");
+        line-height:1rem;
+        padding:5px 10px;
+        width:100%;
+
+        &:hover, .active {
+            color:project-color("yellow");
+            border-left-color: project-color("yellow");
+            background-color: project-color("blue");
+        }
+
+    }
+
+        }
+    }
+    .arrow-down {
+        width: 0; 
+        height: 0; 
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        
+        border-top: 20px solid project-color("blue");
+      }
+
+      .arrow-up {
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        
+        border-bottom: 5px solid project-color("blue");
+      }
+    }
