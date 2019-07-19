@@ -39,17 +39,15 @@
 
 // Finder Section
 .s-finder {
-    @include media-breakpoint-down(sm){
-        display: none;
-    }
-    min-height: 34rem;
+    width: 100%;
+    height: 0;
     background: white url(../images/backgrounddots.png) no-repeat center;
     background-size: cover;
     position: relative;
 
     .medallion {
-        width: 333px;
-        height: 333px;
+        width: 208px;
+        height: 208px;
         overflow: hidden;
         margin: 0;
         padding: 0;
@@ -57,9 +55,10 @@
         background: transparent url(../images/logo-medallion.png) no-repeat center;
         background-size: cover;
         position: absolute;
-        top: 50%;
+        top: auto;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -104px);
+        transition: all .5s linear;
         text-indent: -9999em;
     }
 
@@ -72,28 +71,67 @@
         &.active {
             color: project-color("blue");
             text-transform: uppercase;
-            border-bottom: 1px solid project-color("light-blue");
+            border-bottom: 1px solid project-color("green");
             font-size: 40px;
+            text-decoration: none;
         }
+    }
+
+    .finder-nav {
+        width: 100%;
+        display: none;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
     }
 
     .left-nav,
     .right-nav {
         position: absolute;
         top: 50%;
+        transition: all .5s linear;
     }
 
     .left-nav {
         text-align: right;
-        padding-right: 150px;
-        left: 25%;
-        transform: translate(-25%, -50%);
+        left: 50%;
+        transform: translate(-100%, -50%);
+        padding-right: 220px;
+
+        a {
+
+            &:first-child(){
+                transform: rotate(15deg);
+                transform-origin: calc(100% + 220px) calc(.5em + 30px);
+            }
+
+            &:last-child(){
+                transform: rotate(-15deg);
+                transform-origin: calc(100% + 220px) -30px;
+            }
+
+        }
     }
     .right-nav {
         text-align: left;
-        padding-left: 150px;
-        right: 25%;
-        transform: translate(25%, -50%);
+        right: 50%;
+        transform: translate(100%, -50%);
+        padding-left: 220px;
+
+        a {
+
+            &:first-child(){
+                transform: rotate(-15deg);
+                transform-origin: -220px calc(.5em + 30px);
+            }
+
+            &:last-child(){
+                transform: rotate(15deg);
+                transform-origin: -220px -30px;
+            }
+
+        }
+
     }
 }
 
@@ -749,53 +787,105 @@
 
 
 .sidebar{
-    position:fixed;
-    top:200px;
-    right:-275px;
-    z-index:10000;
-    border:solid 5px project-color("green");
-    border-radius:10px;
-    padding: 3px;
+    border:none;
+    padding: 0px;
+    color: $white;
 
     .close{
-
-        &:before {
-            content:'';
-            position:absolute;
-            top:-10px;
-            left:-10px;
-            background-color: project-color("green");
-            width:32px;
-            height:32px;
-            border-radius:100px;
-            box-shadow: 2px 2px 8px project-color("black");
-            }
-            &:after{
-            content: '\0353'; // here is your X(cross) sign.
-            color: #fff;
-            font-weight: 200;
-            font-size:72px;
-            position:absolute;
-            width: 32px;
-            top:-74px;
-            left: 6px;
-            margin-left: 0;
-            }
-
+        display: none;
+        font-family: "TitilliumText22LBold";
+        position: absolute;
+        top:-10px;
+        left:-10px;
+        background-color: project-color("green");
+        width:32px;
+        height:32px;
+        border-radius: 32px;
+        box-shadow: 2px 2px 8px project-color("black");
+        font-weight: 200;
+        font-size: 32px;
+        line-height: 1;
+        text-align: center;
     }
-.sidebar-body{
-    background-color: project-color("green");
-    font-size:2rem; 
-    color:$white;
-    padding:1rem 0 2rem 0;
-    ul{
-        margin:2rem 0 0 -1rem;
-        list-style: none;
-    }
-    img{
-        height:300px;
+
+    .sidebar-body{
+        background-color: project-color("green");
+        padding: 6.5rem 0 0;
+        text-align: center;
+
+        h4, h5 {
+            color: inherit;
+            margin-bottom: 0;
+        }
+        h4{
+            font-size: 40px;
+            padding: 12px 24px;
+            line-height: 1;
+        }
+        h5{
+            font-size: 1rem;
+            padding: 12px 24px;
+            background-image: linear-gradient(to left, transparentize(project-color("blue"), 0), transparentize(project-color("blue"), .25));
+        }    
+        ul{
+            font-size: 2rem; 
+            margin:2rem 0 0 -1rem;
+            list-style: none;
+            display: none;
+        }
+
+        .logo-online {
+            background-color: white;
+            padding: .8125rem;
+            width: 100%;
+            display: block;
+        }
     }
 }
+
+@include media-breakpoint-up(md) {
+    .s-finder{
+        min-height: 34rem;
+
+        .finder-nav {
+            display: block;
+        }
+        
+        .medallion {
+            width: 333px;
+            height: 333px;
+            transform: translate(-50%, -166.5px);
+        }    
+    }
+
+    .sidebar{
+        position:fixed;
+        top:200px;
+        right:0px;
+        z-index:10000;
+        border:solid 5px project-color("green");
+        border-radius: 10px;
+        padding: 3px;
+        border-right: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        padding-right: 0;
+    
+        .close{
+            display: block;
+        }
+
+        .sidebar-body{
+            width: 328px;
+            text-align: left;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+
+            ul{
+                display: block;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(sm){
@@ -825,45 +915,9 @@
         order:4;
     }
 
-    .hide-mobile{
-        display:none;
-    }
-
-    .mobile-medallion {
-        width: 85px;
-        height: 85px;
-        overflow: hidden;
-        margin: -125px 0;
-        padding: 0;
-        text-align: center;
-        background: transparent url(../images/logo-medallion.png) no-repeat center;
-        background-size: cover;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-indent: -9999em;
-    }
-
     .s-hero{
         max-height:400px;
     }
-
-    .sidebar{
-        background-color:project-color("green");
-        position:relative;
-        top:0;
-        right:0;
-        border:none;
-        border-radius:0px;
-        padding: 0px;
-        order: 1;
-        
-        img{
-            max-height:200px;
-        }
-    }
-
 
     .s-admissions{
         margin-bottom:0;
