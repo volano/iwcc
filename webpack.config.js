@@ -18,6 +18,13 @@ module.exports = (args, env) => {
             index: "home.html"
         },
 
+        resolve: {
+            alias: {
+                "scss": path.resolve(__dirname, 'src/scss'),
+                "fonts": path.resolve(__dirname, 'scr/fonts')
+            }
+        },
+
         output: {
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist')
@@ -113,7 +120,7 @@ module.exports = (args, env) => {
             // Pages to emit
             new HtmlWebpackPlugin({
                 filename: 'page_template.html',
-                template: './html/home.hbs'
+                template: './html/interior-nav.hbs'
             }),
             new HtmlWebpackPlugin({
                 filename: 'home.html',
@@ -132,8 +139,8 @@ module.exports = (args, env) => {
                 template: './html/about.hbs'
             }),
             new HtmlWebpackPlugin({
-                filename: 'side-nav.html',
-                template: './html/side-nav.hbs'
+                filename: 'center.html',
+                template: './html/interior-nav.hbs'
             }),
 
 
