@@ -6,6 +6,7 @@
     position: relative;
     background-color: project-color("navy-blue");
     padding: 10px;
+    border-bottom: 1px solid project-color("dark");
 
     .logo{
         margin: 0 5px 0 auto;
@@ -13,6 +14,7 @@
         background-size: contain;
         align-self: center;
         color:$white;
+        line-height: 25px;
 
         a {
             display: block;
@@ -44,8 +46,43 @@
     }
 }
 
-.navbar-toggler {
+.navbar-button {
     z-index: $zindex-fixed+1;
+    border: 0;
+    border-left: 5px solid $white;
+    border-right: 5px solid $white;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    text-indent: -999em;
+    background: transparent;
+    padding: 0 5px;
+
+    &::before {
+        content: "";
+        display: block;
+        background-color: $white;
+        width: 5px;
+        height: 100%;
+    }
+
+
+    &.collapsed {
+        border-left: 0;
+        border-right: 0;
+        border-top: 5px solid $white;
+        border-bottom: 5px solid $white;
+        padding: 5px 0;
+
+        &::before {
+            height: 5px;
+            width: 100;
+        }    
+    }
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
 }
 
 #navbar-menu {
@@ -54,12 +91,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: project-color("black");
+    background: project-color("black") url("../images/logo-logomark.png") no-repeat calc(100% - 11px) 11px;
     height: 100vh;
     overflow-y: auto;
     justify-content: flex-start;
-    padding-top: 40px;
-
+    padding-top: 68px;
+    background-attachment: initial;
+    background-size: 43.33px 30px;
 
     @include media-breakpoint-up(md) {
         padding-top: 0;
@@ -67,7 +105,7 @@
         flex-flow: column-reverse;
         max-width: 100%;
         position: static;
-        background-color: transparent;
+        background: none;
         padding-top: 0;
         height: auto;
     }
@@ -83,9 +121,41 @@
         padding:0;
         @include make-container();
 
+        .nav-item{
+            border-bottom: 1px solid project-color("navy-blue");
+            padding: .5rem 1rem;
+        }
+
+        form.nav-item{
+            margin: 0;
+
+            .btn {
+                padding: 0;
+            }
+
+        }
+
+        .form-control {
+            margin: 0;
+            padding: 0;
+            background:none;
+            border:none;
+            outline:none;
+            line-height: 1;
+            font-size: 1.125rem;
+            color: $white;
+
+            &::placeholder {
+                color: $white;
+                opacity: 1;
+                text-transform: uppercase;
+            }
+        }
+
         .nav-link{
-            font: .875rem/30px 'TitilliumText22LBold';
+            font: 1.125rem/30px 'TitilliumText22LBold';
             text-transform: uppercase;
+            color: project-color("gray");
 
             @include hover-focus-active{
                 color:project-color("yellow");
@@ -94,6 +164,9 @@
 
         .nav-utility-right .nav-link {
             text-transform: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
 
     }
@@ -105,8 +178,21 @@
             flex-direction: row;
             align-items: center;
 
+            .nav-item {
+                border: 0;
+            }
+
             .nav-link {
-                color: $black;
+                font-size: .875rem;
+                line-height: 1rem;
+                color: project-color("dark-orange");
+            }
+            form.nav-item{
+                padding: 6px 0 3px;
+            }
+    
+            .input-group{
+                border-bottom:1px solid project-color("dark-gray");
             }
 
             .nav-utility-right{
@@ -114,18 +200,22 @@
                 flex-direction: row;
                 margin-left: auto;
 
-                .nav-link{
-                    color: project-color("navy-blue");
+                .icon-user {
+                    width: 18px;
+                    height: 18px;
+                    margin-left: 3px;             
                 }
 
-                input,
-                input:focus{
-                    margin:10px 0 0 0;
-                    padding:0;
-                    background:none;
-                    border:none;
-                    border-bottom:1px solid project-color("dark-gray");
-                    outline:none;
+                .nav-link{
+                    color: project-color("dark-gray");
+                }
+
+                .form-control{
+                    font-size: 1rem;
+                    height: auto;
+                    &::placeholder {
+                        color: project-color("dark-gray");
+                    }
                 }
 
             }
@@ -150,6 +240,10 @@
         text-transform:uppercase;
         font-size:1.25rem;
 
+        .nav-item {
+            border-bottom: 1px solid project-color("navy-blue");
+        }
+
         .nav-link{
             color:$white;
 
@@ -172,6 +266,10 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
+
+            .nav-item {
+                border: 0;
+            }
         }
 
         .logo {

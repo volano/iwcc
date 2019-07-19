@@ -11,7 +11,9 @@
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/images";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
@@ -23,6 +25,7 @@
 @import "global";
 @import "navigation";
 @import "footer";
+@import "icons";
 @import "titlebar";
 
 // Components
@@ -60,7 +63,7 @@ h2{
 
 // Primary Content Containers
 main {
-    margin-top: 68px;
+    margin-top: 46px;
     &.page-full {
         background: $white url(../images/backgrounddots.png) no-repeat center 50%;
         background-size: cover;
