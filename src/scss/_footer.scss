@@ -4,6 +4,10 @@
     padding: 100px 0;
     position: relative;
 
+    h2 {
+        color: inherit;
+    }
+    
     &::before {
         content: "";
         position: absolute;

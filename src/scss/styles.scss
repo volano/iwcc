@@ -64,6 +64,7 @@ h2{
 // Primary Content Containers
 main {
     margin-top: 46px;
+
     &.page-full {
         background: $white url(../images/backgrounddots.png) no-repeat center 50%;
         background-size: cover;
@@ -74,7 +75,7 @@ main {
     }
 
     @include media-breakpoint-up(md){
-        margin-top: 155px;
+        margin-top: 34px;
 
         &.page-full .content {
             padding: 20px 3.125rem 9.25rem;

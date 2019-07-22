@@ -9,6 +9,7 @@
     }
 
     @include media-breakpoint-up(md) {
+        margin-top: 138px;
         padding:0 100px;
     }
 }
