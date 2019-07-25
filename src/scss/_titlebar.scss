@@ -4,6 +4,17 @@
     background-color:$white;
     padding: 0 15px;
 
+    @include media-breakpoint-down(md) {
+        padding:0;
+        margin-top:65px;
+
+        h2{
+            margin: auto 0 auto 10px;
+            font-size:1.5rem;
+        }   
+        
+    }
+
     h2{
         margin: auto 0 auto 10px;
     }
@@ -24,5 +35,9 @@
         max-width:84px;
         height: 51px;
         width:100%;
+
+        @include media-breakpoint-down(md) {
+        max-width:65px;
+        }
 }
 

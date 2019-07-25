@@ -443,10 +443,11 @@
 
     .left-nav{
         ul{
-    margin:.5rem 0 0 0;
+    margin:.5rem 0 15px 0;
     list-style: none;  
     padding:0;  
     width:100%;
+
     
     a{
         text-decoration: underline;
@@ -463,6 +464,13 @@
         line-height:1rem;
         padding:5px 10px;
         width:100%;
+        border-bottom: solid 1px project-color("light-gray");
+
+        @include media-breakpoint-down(md) {
+            width:60%;
+        }
+
+
 
         &:hover, .active {
             color:project-color("yellow");
@@ -477,18 +485,62 @@
     .arrow-down {
         width: 0; 
         height: 0; 
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
         
-        border-top: 20px solid project-color("blue");
+        border-top: 10px solid project-color("blue");
+
+        @include media-breakpoint-up(md) {
+            display:none;
+        }
+
+        &:before{
+            content:"More";
+            color: project-color("blue");
+            position: absolute;
+            top:-.7rem;
+            left:-40px;
+            font-style: normal;
+         }
+
       }
 
       .arrow-up {
         width: 0; 
         height: 0; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
         
-        border-bottom: 5px solid project-color("blue");
+        border-bottom: 10px solid project-color("blue");
+
+        @include media-breakpoint-up(md) {
+            display:none;
+        }
+
+        &:before{
+            content: "Less";
+            color: #0065bd;
+            position: absolute;
+            top: .8rem;
+            left: -40px;
+            font-style: normal;
+         }
+
       }
+    }
+
+    @include media-breakpoint-down(md) {
+        #more-less{
+        position: absolute;
+        right:0;
+        bottom:-1rem;
+        
+        }
+
+        .more {
+            position: relative;
+            height:6.75rem;
+            overflow:hidden;
+        }
+
     }

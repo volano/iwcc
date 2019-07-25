@@ -12,10 +12,19 @@
         background-size:cover;
         position:relative;
         height:100%;
+
+        @include media-breakpoint-down(md) {
+        max-height: 200px;
+        }
     }
 
     .s-about{
         margin-bottom:-10rem;
+        @include media-breakpoint-down(md) {
+            align-items: center;
+            margin-bottom:0;
+            
+            }
         .image-bar{
             display:flex;
             flex-direction: row;
@@ -24,6 +33,12 @@
 
             .image-box{
                 width:30%;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    align-items: center;
+                    }
+                
                 h3{
                     margin:.5rem 0 1.5rem 0;
                 }
@@ -38,6 +53,10 @@
             }
             p {
               font-size:1.5rem;  
+              @include media-breakpoint-down(md) {
+              font-size:1rem;
+              }
+
             }
         }
     }

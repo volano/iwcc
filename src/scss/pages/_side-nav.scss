@@ -14,6 +14,11 @@
             margin-bottom:1rem;
             color: project-color("navy-blue");
             font-weight:700;
+
+            @include media-breakpoint-down(md) {
+                margin-top:2rem;
+        
+            }
         }
         p {
           font-size:1.25rem;
