@@ -1,0 +1,32 @@
+<section class="s-image-list">
+    <h2 class="s-header">{{imageList.sectionHeader}}</h2>
+    {{#if imageList.sectionIntro}}
+    <p class="s-intro">{{imageList.sectionIntro}}</p>
+    {{/if}}
+{{#if imageList.images }} 
+   <ul class="image-list">
+        {{#each imageList.images}}
+        <li class="image-list-item">
+            <div class="image-list-image">
+                <img src="{{imageUrl}}" class="img-fluid" />
+            </div>
+            <div class="image-list-details">
+                <h3 class="image-list-title">
+                    {{#unless this.linkUrl}}
+                       {{title}}
+                    {{else}}
+                        <a href="{{this.linkUrl}}">{{this.title}}</a>
+                    {{/unless}}
+                </h3>
+                {{#if this.subtitle}}
+                <h4 class="image-list-subtitle">{{this.subtitle}}</h4>
+                {{/if}}
+                {{#if this.body}}
+                <p class="image-list-body">{{body}}</p>
+                {{/if}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+{{/if}}
+</section>

@@ -1,0 +1,25 @@
+{
+    "imageList" : {
+        "sectionHeader": "Title of section",
+        "sectionIntro": "Introduction",
+        "images": [
+            {
+                "title": "First Title of image (no link url)",
+                "subtitle": "subtitle for image",
+                "imageUrl": "https://via.placeholder.com/150",
+                "linkUrl": ""
+            },
+            {
+                "title": "Second Title of image (no subtitle and no link url)",
+                "imageUrl": "https://via.placeholder.com/150",
+                "linkUrl": ""
+            },
+            {
+                "title": "Third Title of image (no subtitle)",
+                "imageUrl": "https://via.placeholder.com/150",
+                "linkUrl": "http://www.google.com"
+            }
+
+        ]
+    }
+}

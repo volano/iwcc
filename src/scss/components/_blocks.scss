@@ -1,0 +1,8 @@
+.s-image-list {
+    .image-list {
+        @include list-unstyled;
+    }
+    .image-list-item {
+        display: flex;
+    }
+}

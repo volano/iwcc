@@ -13,6 +13,9 @@
                         {{> partials/nav-left }}
                     </div>
                     <div class="col-sm-12 col-md-10 page-content">
+                    {{#if imageList}}
+                    {{> components/image-list imageList=imageList }}
+                    {{/if}}
                     <h2>Left Nav Link 4 is really long for 2 lines</h2>
                         <p>Bacon ipsum dolor amet pork loin t-bone tail venison sausage short loin shoulder. Rump corned beef tongue strip steak ground round, salami cow doner pork loin andouille shankle beef ribs. Tongue jowl drumstick, bresaola ham biltong boudin ribeye tri-tip ground round prosciutto pork loin spare ribs short loin swine. Turkey pig boudin beef. Picanha kevin venison ball tip prosciutto pork loin, pig shoulder turkey.</p>
 

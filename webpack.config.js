@@ -140,7 +140,8 @@ module.exports = (args, env) => {
             }),
             new HtmlWebpackPlugin({
                 filename: 'center.html',
-                template: './html/interior-nav.hbs'
+                template: './html/interior-nav.hbs',
+                templateParameters: require('./src/html/contexts/images.json')
             }),
 
 
