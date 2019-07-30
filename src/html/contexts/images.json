@@ -1,7 +1,7 @@
 {
     "imageList" : {
-        "sectionHeader": "Title of section",
-        "sectionIntro": "Introduction",
+        "sectionHeader": "Generic Block Image List Section Title",
+        "sectionIntro": "Introduction to generic block image list section.",
         "images": [
             {
                 "title": "First Title of image (no link url)",
@@ -20,6 +20,29 @@
                 "linkUrl": "http://www.google.com"
             }
 
+        ]
+    },
+
+    "blockList": {
+        "type": 2,
+        "limit": 2,
+        "sectionHeader": "Generic Block 2 Column Section Title",
+        "sectionIntro": "Introduction to generic block 2 column section.",
+        "columns":[
+            {
+                "title": "",
+                "subtitle": "",
+                "imageUrl": "https://via.placeholder.com/150",
+                "linkUrl": "http://www.google.com",
+                "body": ""
+            },
+            {
+                "title": "",
+                "subtitle": "",
+                "imageUrl": "https://via.placeholder.com/150",
+                "linkUrl": "http://www.google.com",
+                "body": ""
+            }
         ]
     }
 }
