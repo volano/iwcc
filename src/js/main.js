@@ -42,7 +42,7 @@ $(function(){
                 finder.querySelectorAll(".medallion, .left-nav, .right-nav").map((e)=> e.style = null);
             }
 
-        }, 50);
+        }, 10);
 
 
     });
