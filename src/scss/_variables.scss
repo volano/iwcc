@@ -6,6 +6,45 @@ $navbar-padding-x: 0;
 $btn-border-radius: 0;
 $grid-gutter-width: 20px;
 
+$font-size-base:              1rem;
+
+$headings-font-family: "TitilliumText22LBold";
+$headings-font-weight: 500;
+
+// Heading font sizes
+$h1-font-size:                $font-size-base * 2.25;
+$h2-font-size:                $font-size-base * 2.0625;
+$h3-font-size:                $font-size-base * 1.875;
+$h4-font-size:                $font-size-base * 1.6875;
+$h5-font-size:                $font-size-base * 1.5 ;
+$h6-font-size:                $font-size-base * 1.3125;
+
+// Carousel
+$carousel-control-color:             project-color("white");
+$carousel-control-width:             15%;
+$carousel-control-opacity:           .5;
+$carousel-control-hover-opacity:     .9;
+$carousel-control-transition:        opacity .15s ease;
+
+$carousel-indicator-width:           16px;
+$carousel-indicator-height:          16px;
+$carousel-indicator-hit-area-height: 10px !default;
+$carousel-indicator-spacer:          14px ;
+$carousel-indicator-active-bg:       project-color("white");
+$carousel-indicator-transition:      opacity .6s ease !default;
+
+$carousel-caption-width:             70% !default;
+$carousel-caption-color:             project-color("white");
+
+$carousel-control-icon-width:        20px !default;
+
+$carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$carousel-transition-duration:       .6s !default;
+$carousel-transition:                transform $carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+
 $theme-colors: (
     "lightgray": project-color("light-gray")
 )
