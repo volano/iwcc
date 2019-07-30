@@ -19,9 +19,14 @@ module.exports = (args, env) => {
         },
 
         resolve: {
+            modules: [
+                'node_modules',
+                path.resolve(__dirname, 'src/js/modules'),
+                path.resolve(__dirname, "src/js/components")
+            ],
             alias: {
                 "scss": path.resolve(__dirname, 'src/scss'),
-                "fonts": path.resolve(__dirname, 'scr/fonts')
+                "fonts": path.resolve(__dirname, 'src/fonts'),
             }
         },
 
@@ -33,12 +38,12 @@ module.exports = (args, env) => {
         context: path.resolve(__dirname, 'src'),
 
         entry: {
-            "js/main": "./js/main"
+            "js/main": "./js/main",
+            "js/home": "./js/home"
         },
 
         module: {
             rules: [
-    
                 {
                     test: /\.s?css$/,
                     use: [
@@ -53,7 +58,6 @@ module.exports = (args, env) => {
                         }
                     ]
                 },
-        
                 {
                     test: /\.m?js$/,
                     exclude: /(node_modules|bower_components)/,
@@ -124,7 +128,11 @@ module.exports = (args, env) => {
             }),
             new HtmlWebpackPlugin({
                 filename: 'home.html',
-                template: './html/home.hbs'
+                template: './html/home.hbs',
+                chunks: [
+                    'js/main',
+                    "js/home"
+                ]
             }),
             new HtmlWebpackPlugin({
                 filename: 'styleguide.html',
