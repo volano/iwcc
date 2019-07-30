@@ -9,6 +9,7 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/forms";
@@ -44,13 +45,8 @@
 @import "pages/about";
 @import "pages/_side-nav";
 
-
 .hide{
    display:none; 
-}
-
-h2{
-    font-size:2rem;
 }
 
 .dot-background{
