@@ -1,0 +1,22 @@
+label {
+    color: project-color("black");
+    font-size: 1.5rem;
+    margin-left: .625em;
+}
+
+.form-control ~ .form-text {
+    margin-left: .9375rem;
+}
+
+.custom-control {
+    min-height: $custom-control-indicator-size;
+    margin-bottom: 1.875rem;
+}
+
+.custom-control-label{
+    line-height: 3.125rem;
+    &::after,
+    &::before {
+        top: 0;
+    }
+}

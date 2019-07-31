@@ -1,6 +1,10 @@
 $font-family-sans-serif: 'TitilliumText22LRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; 
 $primary: project-color("blue");
 $dark: project-color("black");
+$theme-colors: (
+    "lightgray": project-color("light-gray")
+);
+
 $navbar-padding-y: 0;
 $navbar-padding-x: 0;
 $btn-border-radius: 0;
@@ -18,6 +22,24 @@ $h3-font-size:                $font-size-base * 1.875;
 $h4-font-size:                $font-size-base * 1.6875;
 $h5-font-size:                $font-size-base * 1.5 ;
 $h6-font-size:                $font-size-base * 1.3125;
+
+$input-border-radius: 0;
+$input-border-width: 2px;
+$input-border-color: project-color("dark-gray");
+$input-color: project-color("navy-blue");
+$input-placeholder-color:project-color("gray");
+$input-font-size:  $font-size-base * 1.5;
+$input-line-height: 1.25;
+$input-padding-y: .3em;
+$input-padding-x: 0.9375rem;
+$input-box-shadow: none;
+
+
+$btn-border-radius: .3em;
+$btn-font-size: 1.875rem; // 30px;
+$btn-line-height: 1.2; // 36px;
+$btn-padding-y: .65em;
+$btn-padding-x: .75em;
 
 // Carousel
 $carousel-control-color:             project-color("white");
@@ -44,7 +66,41 @@ $carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg 
 $carousel-transition-duration:       .6s !default;
 $carousel-transition:                transform $carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
 
+/** Custom controls **/
+$custom-control-gutter:                 .5rem !default;
+$custom-control-spacer-x:               3.125rem;
+$custom-control-indicator-size:         3.125rem;
+$custom-control-indicator-bg:           project-color("white");
+$custom-control-indicator-bg-size:      90% 90%;
+$custom-control-indicator-box-shadow:   $input-box-shadow;
+$custom-control-indicator-border-color: project-color("dark-gray");
+$custom-control-indicator-border-width: $input-border-width;
 
-$theme-colors: (
-    "lightgray": project-color("light-gray")
-)
+//$custom-control-indicator-disabled-bg:          $input-disabled-bg !default;
+//custom-control-label-disabled-color:           $gray-600 !default;
+
+$custom-control-indicator-checked-color:        project-color("blue");
+$custom-control-indicator-checked-bg:           project-color("white");
+$custom-control-indicator-checked-disabled-bg:  rgba($primary, .5);
+$custom-control-indicator-checked-box-shadow:   none;
+$custom-control-indicator-checked-border-color: project-color("blue");
+
+$custom-control-indicator-focus-box-shadow:     none;
+$custom-control-indicator-focus-border-color:   none;
+
+//custom-control-indicator-active-color:         $component-active-color !default;
+//$custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;
+//$custom-control-indicator-active-box-shadow:    none !default;
+//$custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;
+
+$custom-checkbox-indicator-border-radius:       0;
+$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' fill='#{$custom-control-indicator-checked-color}' d='M1.8 28.7c.6-2.3 2.7-4.8 6.3-4.1 2.8.8 5.2 3.3 7 7.5C25.5 17.6 34.4 7.7 46.3 3.9c1.1-.2 1.6-.2.8.7-12.2 9.9-23.3 24.2-31.8 42-.2.4-.9.4-1.2-.1-2.6-4.8-4.5-9.4-7.1-14.2-1.2-2.4-2.7-4.2-5.2-3.6z'/%3E%3C/svg%3E"), "#", "%23");
+
+//$custom-checkbox-indicator-indeterminate-bg:           $component-active-bg !default;
+$custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color;
+$custom-checkbox-indicator-icon-indeterminate:         str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"), "#", "%23");
+$custom-checkbox-indicator-indeterminate-box-shadow:   none;
+//$custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg !default;
+
+$custom-radio-indicator-border-radius:          50%;
+$custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23");
