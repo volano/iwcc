@@ -1,0 +1,64 @@
+
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <fieldset>
+                <legend></legend>
+                <div class="form-group">
+                    <label for="text1">Single Line Text Box</label>
+                    <input type="text" class="form-control" required name="text1" id="text1" placeholder="Text Box" value="Value already filled">
+                </div>
+
+                <div class="form-group">
+                    <label for="text2">Single Line Text Box</label>
+                    <input type="text" class="form-control" name="text2" id="text2" placeholder="Text Box">
+                    <small class="form-text">Helper text for descriptions below th box.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="text3">Multiple Line Text Box</label>
+                    <textarea class="form-control" name="text3" id="text3" rows="3" cols="6" placeholder="Text Box"></textarea>
+                    <small class="form-text">Helper text for descriptions below th box.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="select1">Select</label>
+                    <select class="form-control custom-select" name="select1" id="select1">
+                        <option> Select an Option </option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                    </select>
+                </div>
+
+
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn">Submit</button>
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="check_option1" id="check_option1" />
+                <label for="check_option1" class="custom-control-label">Checkbox option 1</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="check_option2" id="check_option2" checked/>
+                <label for="check_option2" class="custom-control-label">Checkbox option 2</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="radio_option" id="radio_option1" value="option1"/>
+                <label for="radio_option1" class="custom-control-label">Radio option 1</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="radio_option" id="radio_option2" value="option2" checked/>
+                <label for="radio_option2" class="custom-control-label">Radio option 2</label>
+            </div>
+        </div>
+    </div>
+</div>
