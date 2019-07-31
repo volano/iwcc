@@ -1,57 +1,5 @@
-@import "../colors";
-@import "../functions"; // Project Functions
-@import "../variables";
-
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
-// image assets for the homepage
-$bkg-dots:"../../images/backgrounddots.png";
-$bkg-academics: "../../images/academics-background.png";
-$bkg-admissions: "../../images/background-admissions.png";
-$bkg-student: "../../images/bkg-student.png";
-$logo-medallion: "../../images/logo-medallion.png";
-$sprite-academics: "../../images/sprite-academics.gif";
-
-.btn-action {
-    display: flex;
-    flex-direction: column;
-    background: none;
-    color: $white;
-    position: relative;
-    border: 2px solid $white;
-    border-bottom: 0;
-    line-height: 1;
-    outline: 0;
-
-    &:hover{
-        color:project-color("yellow");
-        border-color:project-color("yellow");
-
-        .ribbon::before,
-        .ribbon::after {
-            border-color: project-color("yellow")
-        }
-    }
-
-    .ribbon {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        display: flex;
-        justify-content: stretch;
-        align-items: center;
-
-        &::before,
-        &::after {
-            content: "";
-            flex: 1 1 auto;
-            height: 0;
-            border-bottom: 2px solid $white;
-        }
-    }
-}
+@import "../base";
+@import "../academics"; // academics section
 
 // Finder Section
 .s-finder {
@@ -116,12 +64,12 @@ $sprite-academics: "../../images/sprite-academics.gif";
 
         a {
 
-            &:first-child(){
+            &:first-child{
                 transform: rotate(15deg);
                 transform-origin: calc(100% + 220px) calc(.5em + 30px);
             }
 
-            &:last-child(){
+            &:last-child{
                 transform: rotate(-15deg);
                 transform-origin: calc(100% + 220px) -30px;
             }
@@ -136,12 +84,12 @@ $sprite-academics: "../../images/sprite-academics.gif";
 
         a {
 
-            &:first-child(){
+            &:first-child{
                 transform: rotate(-15deg);
                 transform-origin: -220px calc(.5em + 30px);
             }
 
-            &:last-child(){
+            &:last-child{
                 transform: rotate(15deg);
                 transform-origin: -220px -30px;
             }
@@ -498,171 +446,6 @@ $sprite-academics: "../../images/sprite-academics.gif";
     }
 }
 
-.s-academics{
-    background-image: url($bkg-dots);
-    background-repeat:no-repeat;
-    background-size:100%;
-    background-position: top left;
-    margin:0 0 0 0;  
-    color:$white;
-
-    .academics-container{
-        background: rgba(0,42,66,.65);
-        height:auto;
-        display:block;
-        position: relative;
-        height:auto;
-        padding:20px 15px;
-
-        h2{
-            margin-bottom:10rem;
-            color:project-color("white");
-        }
-
-        &::after {
-            content: "";
-            background: transparent url($bkg-academics) no-repeat center;
-            opacity: 0.3;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-size: cover;
-            position: absolute;
-            z-index: -1; 
-        }
-
-        .btn-list{
-            margin-bottom:0rem;
-            align-content: stretch;
-
-            .btn-action{
-                margin-bottom:80px;
-                justify-content: center;
-                color:$white;
-                background:none;
-                font-size: 1.6rem;
-                padding: .5rem 1.8rem 4.5rem 1.8rem;
-                border-width: 5px;
-
-                &:hover{
-                    color:project-color("yellow");
-                }
-
-                .ribbon {
-                    bottom: -45px;
-                    &:before,
-                    &::after {
-                        border-top: 15px solid project-color("green");
-                        border-bottom-width: 5px;
-                    }
-                }
-
-                .icon {
-                    background: $white url($sprite-academics) no-repeat 0 0;
-                    content: " ";
-                    height: 110px;
-                    width: 110px;
-                    border-radius: 100px;
-                    background-size: 100%;
-                    margin: 0 10px;
-                }
-            }
-
-            .business .ribbon::before,
-            .business .ribbon::after
-            {
-                border-top-color: project-color("green");
-            }
-
-            .industrial{
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("orange");
-                }
-
-                .icon{
-                    background-position-y: -110px;
-                }
-            }
-            .communication{
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("yellow");
-                }
-
-                .icon{
-                    background-position-y: -220px;
-                }
-            }
-            .health{
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("red");
-                }
-
-                .icon{
-                    background-position-y: -330px;
-                }
-            }
-            .science{
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("purple");
-                }
-
-                .icon{
-                    background-position-y: -440px;
-                }
-            }
-
-            .social{
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("blue");
-                }
-
-                .icon{
-                    background-position-y: -550px;
-                }
-            }
-            .general{
-                line-height:3.15rem;
-                .ribbon::before,
-                .ribbon::after{
-                    border-top-color: project-color("dark-gray");
-                }
-
-                .icon{
-                    background-position-y: -660px;
-                }
-            }
-        }
-    }
-
-    @include media-breakpoint-up(md) {
-        .academics-container {
-            padding:20px 100px;
-            .btn-list {
-                display:flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
-    
-                .btn-action {
-                    width: 45%;
-                }
-            }
-    
-        }
-    }
-
-    @include media-breakpoint-up(lg) {
-        .academics-container .btn-list .btn-action {
-            width: 30%;
-        }
-    }
-}
-
 .s-featured {
     background:project-color("dark-gray");
 
@@ -987,7 +770,7 @@ $sprite-academics: "../../images/sprite-academics.gif";
                     }
                     min-height: 8rem;
                 }
-                .center-image{
+                .center-image {
                     display:none
                 }
             }

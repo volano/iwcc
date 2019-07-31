@@ -1,0 +1,44 @@
+@import "../base";
+@import "../academics";
+
+.p-academics{
+
+    .page-title:before{
+        content:"Academic Programs";
+    }
+
+    .s-hero-academics{
+        max-height: 520px;
+        background: url('../../images/academics_hero.png') no-repeat center;
+        background-size:cover;
+        position:relative;
+        height:100%
+    }
+
+    .s-academics .academics-container{
+        background-color:transparent;
+
+        h2{
+            margin-bottom:1rem;
+        }
+
+        .btn-action{
+            color:project-color("blue");
+            box-shadow: 0px 6px 12px project-color("dark-gray");
+
+            &:hover{
+                color:project-color("black");
+                border-color:project-color("navy-blue");
+
+                .ribbon::before,
+                .ribbon::after{
+                    border-bottom-color:project-color("navy-blue");
+                }
+            }
+
+            .icon{
+                box-shadow: 4px 4px 8px project-color("dark-gray");
+            }
+        }
+    }
+}

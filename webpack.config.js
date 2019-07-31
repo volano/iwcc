@@ -39,7 +39,8 @@ module.exports = (args, env) => {
 
         entry: {
             "js/main": "./js/main",
-            "js/home": "./js/home"
+            "js/home": "./js/home",
+            "js/academics": "./js/academics"
         },
 
         module: {
@@ -140,7 +141,11 @@ module.exports = (args, env) => {
             }),
             new HtmlWebpackPlugin({
                 filename: 'academics.html',
-                template: './html/academics.hbs'
+                template: './html/academics.hbs',
+                chunks: [
+                    "js/main",
+                    "js/academics"
+                ]
             }),
             new HtmlWebpackPlugin({
                 filename: 'about.html',
