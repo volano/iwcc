@@ -77,7 +77,8 @@ module.exports = (args, env) => {
                         loader: 'file-loader',
                         options: {
                             name: '[contenthash:8].[ext]',
-                            outputPath: "fonts"
+                            outputPath: "fonts",
+                            publicPath: "/fonts"
                         }
                     }
                 },
@@ -145,7 +146,7 @@ module.exports = (args, env) => {
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'academic_programs/business.html',
+                filename: 'academic-programs/business.html',
                 template: './html/academics.hbs',
                 chunks: [
                     "js/main",
