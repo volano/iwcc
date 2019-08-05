@@ -19,3 +19,12 @@ steps:
     npm install
     npx webpack --config webpack.config.js --mode production
   displayName: 'npm install, run webpack'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
