@@ -5,7 +5,7 @@
 .s-finder {
     width: 100%;
     height: 0;
-    background: white url($bkg-dots) no-repeat center;
+    background: white $bkg-dots no-repeat center;
     background-size: cover;
     position: relative;
 
@@ -16,7 +16,7 @@
         margin: 0;
         padding: 0;
         text-align: center;
-        background: transparent url($logo-medallion) no-repeat center;
+        background: transparent $logo-medallion no-repeat center;
         background-size: cover;
         position: absolute;
         top: auto;
@@ -101,7 +101,7 @@
 
 // News and Events Section
 .s-newsevents {
-    background: project-color("light-gray") url($bkg-dots) no-repeat center;
+    background: project-color("light-gray") $bkg-dots no-repeat center;
     background-size: cover;
 
     h3 {
@@ -151,7 +151,7 @@
             width: 100%;
             border: 1px solid project-color("purple");
             min-height: 345px;
-            background: $white url($bkg-dots) no-repeat  -102px -590px;
+            background: $white $bkg-dots no-repeat  -102px -590px;
             background-size: 250%;
             position: relative;
             padding: 30px;
@@ -174,7 +174,7 @@
                 display: block;
                 bottom: 0;
                 left: 30px;
-                background: transparent url($bkg-student) no-repeat bottom center;
+                background: transparent $bkg-student no-repeat bottom center;
                 background-size: contain;
                 width: 40%;
                 height: 318px;
@@ -285,9 +285,32 @@
     }
 }
 
+.s-academics{
+    background: rgba(0,42,66,.65) $bkg-dots no-repeat top left;
+    background-size:100%;
+
+    &::before {
+        content: "";
+        background: transparent $bkg-academics no-repeat center;
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-size: cover;
+        position: absolute;
+        z-index: -1; 
+    }
+
+
+    h2{
+        color:project-color("white");
+    }
+}
+
 // Admissions Section
 .s-admissions{
-    background-image: url($bkg-dots);
+    background-image: $bkg-dots;
     background-repeat:repeat-x;
     background-size:50%;
     background-position: top left;
@@ -302,7 +325,7 @@
 
         &::after{
             content: "";
-            background: url($bkg-admissions) no-repeat center;
+            background: $bkg-admissions no-repeat center;
             background-size: cover;
             opacity: 0.3;
             top: 0;
@@ -497,7 +520,7 @@
 }
 
 .s-centers{
-    background-image: url($bkg-dots);
+    background-image: $bkg-dots;
     background-repeat:no-repeat;
     background-position: center;
     background-size:cover;

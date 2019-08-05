@@ -125,7 +125,8 @@ module.exports = (args, env) => {
             // Pages to emit
             new HtmlWebpackPlugin({
                 filename: 'page_template.html',
-                template: './html/interior-nav.hbs'
+                template: './html/interior-nav.hbs',
+                chunks: 'js/main'
             }),
             new HtmlWebpackPlugin({
                 filename: 'home.html',
@@ -136,10 +137,6 @@ module.exports = (args, env) => {
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'styleguide.html',
-                template: './html/styleguide.hbs'
-            }),
-            new HtmlWebpackPlugin({
                 filename: 'academics.html',
                 template: './html/academics.hbs',
                 chunks: [
@@ -148,8 +145,22 @@ module.exports = (args, env) => {
                 ]
             }),
             new HtmlWebpackPlugin({
+                filename: 'academic_programs/business.html',
+                template: './html/academics.hbs',
+                chunks: [
+                    "js/main",
+                    "js/academics"
+                ]
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'styleguide.html',
+                template: './html/styleguide.hbs',
+                chunks: 'js/main'
+            }),
+            new HtmlWebpackPlugin({
                 filename: 'about.html',
-                template: './html/about.hbs'
+                template: './html/about.hbs',
+                chunks: 'js/main'
             }),
             new HtmlWebpackPlugin({
                 filename: 'center.html',
@@ -160,7 +171,7 @@ module.exports = (args, env) => {
 
             new MiniCssExtractPlugin({
                 filename: '[name].css',
-           chunkFilename: '[id].css',
+                chunkFilename: '[id].css',
                 outputPath: "css"
             }),
             new webpack.HotModuleReplacementPlugin()

@@ -4,6 +4,7 @@
 @import "functions"; // Project Functions
 @import "~bootstrap/scss/functions"; // Bootstrap functions
 @import "variables";
+@import "assets";
 
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
@@ -16,6 +17,7 @@
 @import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/images";
 @import "~bootstrap/scss/nav";
@@ -64,11 +66,11 @@ main {
     margin-top: 46px;
 
     &.page-full {
-        background: $white url(../images/backgrounddots.png) no-repeat center 50%;
-        background-size: cover;
+        background: $white url(../images/backgrounddots.png) no-repeat center;
+        background-size: 150vw;
 
         .content {
-            padding: 20px 20px;
+            padding: 0 0 20px;
         }
     }
 
@@ -76,19 +78,10 @@ main {
         margin-top: 34px;
 
         &.page-full .content {
-            padding: 20px 3.125rem 9.25rem;
+            padding-bottom: 9.25rem;
         }
     
-    }
-
-    @include media-breakpoint-up(lg){
-        &.page-full .content {
-            padding-left: 6.25rem;
-            padding-right: 6.25rem;
-        }
-    }
-
-    
+    }    
 }
 
 

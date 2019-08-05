@@ -3,12 +3,18 @@
     Reused in home and academics pages.
 */
 .s-academics{
-    background-image: url($bkg-dots);
-    background-repeat:no-repeat;
-    background-size:100%;
-    background-position: top left;
     margin:0 0 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     color:$white;
+    position: relative;
+    height:auto;
+    display:block;
+    height:auto;
+
+    h2 {
+        margin-bottom:10rem;
+    }
 
     .btn-action {
         border-width: 5px;
@@ -34,7 +40,7 @@
         }
 
         .icon {
-            background: transparent url($sprite-academics) no-repeat top center;
+            background: transparent $sprite-academics no-repeat top center;
             content: "";
             height: 110px;
             width: 110px;
@@ -46,36 +52,9 @@
 
     }
 
-    .academics-container{
-        background: rgba(0,42,66,.65);
-        height:auto;
-        display:block;
-        position: relative;
-        height:auto;
-        padding:20px 15px;
-
-        h2{
-            margin-bottom:10rem;
-            color:project-color("white");
-        }
-
-        &::after {
-            content: "";
-            background: transparent url($bkg-academics) no-repeat center;
-            opacity: 0.3;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-size: cover;
-            position: absolute;
-            z-index: -1; 
-        }
-
-        .btn-list{
-            margin-bottom: 0;
-            align-content: stretch;
-        }
+    .btn-list{
+        margin-bottom: 0;
+        align-content: stretch;
     }
 
     .business {
@@ -157,27 +136,22 @@
             background-position-y: -600px;
         }
     }
-
-
     
     @include media-breakpoint-up(md) {
-        .academics-container {
-            padding:20px 100px;
-            .btn-list {
-                display:flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
-    
-                .btn-action {
-                    width: 45%;
-                }
+        padding:20px 100px;
+        .btn-list {
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            .btn-action {
+                width: 45%;
             }
-    
-        }
+        }    
     }
 
     @include media-breakpoint-up(lg) {
-        .academics-container .btn-list .btn-action {
+        .btn-list .btn-action {
             width: 30%;
         }
     }

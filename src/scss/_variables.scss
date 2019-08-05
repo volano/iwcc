@@ -24,22 +24,22 @@ $h5-font-size:                $font-size-base * 1.5 ;
 $h6-font-size:                $font-size-base * 1.3125;
 
 $input-border-radius: 0;
-$input-border-width: 2px;
+$input-border-width: 1px;
 $input-border-color: project-color("dark-gray");
 $input-color: project-color("navy-blue");
 $input-placeholder-color:project-color("gray");
-$input-font-size:  $font-size-base * 1.5;
-$input-line-height: 1.25;
+//$input-font-size:  $font-size-base * 1.5;
+//$input-line-height: 1.25;
 $input-padding-y: .3em;
 $input-padding-x: 0.9375rem;
 $input-box-shadow: none;
 
 
 $btn-border-radius: .3em;
-$btn-font-size: 1.875rem; // 30px;
-$btn-line-height: 1.2; // 36px;
-$btn-padding-y: .65em;
-$btn-padding-x: .75em;
+//$btn-font-size: 1.875rem; // 30px;
+//$btn-line-height: 1.2; // 36px;
+//$btn-padding-y: .65em;
+//$btn-padding-x: .75em;
 
 // Carousel
 $carousel-control-color:             project-color("white");
@@ -68,10 +68,10 @@ $carousel-transition:                transform $carousel-transition-duration eas
 
 /** Custom controls **/
 $custom-control-gutter:                 .5rem !default;
-$custom-control-spacer-x:               3.125rem;
-$custom-control-indicator-size:         3.125rem;
+$custom-control-spacer-x:               1rem;
+$custom-control-indicator-size:         1rem;
 $custom-control-indicator-bg:           project-color("white");
-$custom-control-indicator-bg-size:      90% 90%;
+$custom-control-indicator-bg-size:      84%;
 $custom-control-indicator-box-shadow:   $input-box-shadow;
 $custom-control-indicator-border-color: project-color("dark-gray");
 $custom-control-indicator-border-width: $input-border-width;

@@ -28,3 +28,18 @@ blockquote {
         max-width: 20rem;
     }
 }
+
+// This effectively takes the place of a root container
+.s-container {
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 3.125rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 6.25rem;
+    }
+}

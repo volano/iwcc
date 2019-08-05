@@ -36,8 +36,9 @@
             background-color: white;
             color: project-color("blue");
             border: 0;
-            padding: $input-padding-x $input-padding-y;
-            border-radius: $input-border-radius;
+            padding: $btn-padding-x $btn-padding-y;
+            margin-right: 5px;
+            border-radius: $btn-border-radius;
         }
     }
 
@@ -148,7 +149,7 @@
         .footer-tag {
             display: block;
         }
-    
+
         .footer-contact {
             flex: 1;
             padding-top: 84px;
@@ -172,20 +173,15 @@
             font-size:12px;
             .site-name {
                white-space:nowrap;
-               
            }
            .established{
-               white-space: nowrap; 
-                              
+               white-space: nowrap;
            }
             .copyright{
-                white-space:nowrap;   
+                white-space:nowrap;
                 position: absolute;
                 bottom:60px;
-                          
             }
-            
         }
     }
-
 }

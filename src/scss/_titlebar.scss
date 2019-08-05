@@ -1,43 +1,36 @@
 .titlebar-container{
-    display:flex;
-    flex-direction: row;
     background-color:$white;
     padding: 0 15px;
 
-    @include media-breakpoint-down(md) {
-        padding:0;
-        margin-top:65px;
-
-        h2{
-            margin: auto 0 auto 10px;
-            font-size:1.5rem;
-        }   
-        
-    }
-
-    h2{
+    .page-title{
         margin: auto 0 auto 10px;
+        font-size:1.5rem;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            margin: 13px 10px 13px 0;
+            padding-right: 10px;
+            background: transparent $logomark-blue-gradient-outline no-repeat left center;
+            background-size: 72px 50px;
+            height: 51px;
+            flex-basis: 82px;
+            border-right: 1px dotted #c6d3d7;
+        }
     }
 
     @include media-breakpoint-up(md) {
+        margin-top: 90px;
+    }
+
+    @include media-breakpoint-up(lg) {
         margin-top: 138px;
         padding:0 100px;
+
+        .page-title {
+            font-size: 3rem;
+        }
     }
 }
-
-.title-logo{
-        margin: 10px 5px 10px 0;
-        background: transparent url(../images/title-logo.png) no-repeat center;
-        background-size: contain;
-        align-self: center;
-        color:$white;
-        max-height:51px;
-        max-width:84px;
-        height: 51px;
-        width:100%;
-
-        @include media-breakpoint-down(md) {
-        max-width:65px;
-        }
-}
-
