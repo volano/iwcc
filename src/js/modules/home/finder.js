@@ -40,8 +40,8 @@
             rightNav = options.querySelector(".right-nav"),
             direction = element.currentTarget.classList.contains("rotate-cw")?"clockwise":"counterclockwise",
             kinematic = direction === "clockwise" ? [leftNav, rightNav] : [rightNav, leftNav];
-        kinematic[0].append(kinematic[0].firstElementChild);
-        kinematic[1].prepend(kinematic[1].lastElementChild);
+        kinematic[0].insertBefore(kinematic[0].firstElementChild, kinematic[0].lastElementChild);
+        kinematic[1].prepend(kinematic[1].querySelectorAll("a")[2]);
         return false;
     }
 
