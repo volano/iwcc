@@ -9,7 +9,13 @@ import "carousel";
 
     $(init);
 
-    function init(){}
+    function init(){
+        $("#more-less").click(function(){
+            $(".left-nav").toggleClass("more");
+            $("#arrow").toggleClass("arrow-up");
+            $("#arrow").toggleClass("arrow-down");
+        });
+    }
 
 })(jQuery);
 
