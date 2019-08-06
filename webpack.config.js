@@ -9,8 +9,11 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (args, env) => {
+
+    let mode = env.mode || "development";
+
     return {
-        mode: "development",
+        mode: mode,
         devtool: "inline-source-map",
         devServer: {
             hot:true,
@@ -48,26 +51,37 @@ module.exports = (args, env) => {
                 {
                     test: /\.s?css$/,
                     use: [
+                        
+                        (mode === "development" ? { 
+                            loader: "style-loader",
+                            options: {
+                                "sourceMap": true
+                            }
+                        } : {
+                            loader: new MiniCssExtractPlugin().loader
+                        }),
                         {
-                            loader: "style-loader"
+                            loader: "css-loader",
+                            options: {
+                                "sourceMap": true
+                            }
                         },
                         {
-                            loader: "css-loader"
+                            loader: "postcss-loader"
                         },
-                        { 
-                            loader: "sass-loader"
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                "sourceMap": true
+                            }
                         }
                     ]
                 },
+
                 {
                     test: /\.m?js$/,
                     exclude: /(node_modules|bower_components)/,
-                    use: {
-                      loader: 'babel-loader',
-                      options: {
-                        presets: ['@babel/preset-env']
-                      }
-                    }
+                    loader: 'babel-loader' // options set in babelrc
                 },
 
                 // Font files
@@ -101,7 +115,7 @@ module.exports = (args, env) => {
                 { 
                     test: /\.hbs$/, 
                     loader: "handlebars-loader" 
-                }
+                },
             ],  
         },
         plugins: [
