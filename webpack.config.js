@@ -58,7 +58,10 @@ module.exports = (args, env) => {
                                 "sourceMap": true
                             }
                         } : {
-                            loader: new MiniCssExtractPlugin().loader
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                "sourceMap": true
+                            }
                         }),
                         {
                             loader: "css-loader",
