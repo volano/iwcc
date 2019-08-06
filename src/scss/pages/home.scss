@@ -33,11 +33,6 @@
         font-size: 33px;
  
         &.active {
-            color: project-color("blue");
-            text-transform: uppercase;
-            border-bottom: 1px solid project-color("green");
-            font-size: 40px;
-            text-decoration: none;
         }
     }
 
@@ -54,6 +49,19 @@
         position: absolute;
         top: 50%;
         // transition: all .5s linear;
+
+        a {
+            transition: all .5s ease-in-out;
+        }
+
+        a:nth-child(2){
+            color: project-color("blue");
+            text-transform: uppercase;
+            border-bottom: 1px solid project-color("green");
+            font-size: 40px;
+            text-decoration: none;    
+        }
+
     }
 
     .left-nav {
