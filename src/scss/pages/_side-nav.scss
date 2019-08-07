@@ -1,14 +1,4 @@
-.p-side-nav{
-    background: none!important;
-
-    .page-title{
-        &:before{
-            content:"Side Nav Template";
-        }
-    }
-
-
-    .side-nav-container{
+.side-nav-container{
     .page-content{
         h2{
             margin-bottom:1rem;
@@ -24,6 +14,5 @@
           font-size:1.25rem;
           font-family:TitilliumText22LBold;
         }
-    }
     }
 }

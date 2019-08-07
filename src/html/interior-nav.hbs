@@ -1,13 +1,13 @@
 <html>
     <head>
-        {{> partials/head }}
+    {{> partials/head }}
     </head>
     <body>
         {{> partials/header }}
+        {{> partials/titlebar title="Interior Template with side nav" }}
+        {{> components/carousel }}
         <main class="p-side-nav page-full">
-            {{> components/carousel }}
-            {{> partials/titlebar }}
-            <section class="content s-side-nav">
+            <section class="s-container s-side-nav">
                 <div class="side-nav-container row">
                     <div class="left-nav col-sm-12 col-md-2 more">
                         {{> partials/nav-left }}
