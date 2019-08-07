@@ -13,70 +13,70 @@ module.exports = (args, env) => {
     let mode = env.mode || "development";
 
     return {
-        mode: mode,
-        devtool: "inline-source-map",
-        devServer: {
-            hot:true,
-            contentBase: './dist',
-            index: "home.html"
+        "mode": mode,
+        "devtool": "inline-source-map",
+        "devServer": {
+            "hot":true,
+            "contentBase": './dist',
+            "index": "home.html"
         },
 
-        resolve: {
-            modules: [
+        "resolve": {
+            "modules": [
                 'node_modules',
                 path.resolve(__dirname, 'src/js/modules'),
                 path.resolve(__dirname, "src/js/components")
             ],
-            alias: {
+            "alias": {
                 "scss": path.resolve(__dirname, 'src/scss'),
                 "fonts": path.resolve(__dirname, 'src/fonts'),
             }
         },
 
-        output: {
-            filename: 'js/[name].bundle.js',
-            path: path.resolve(__dirname, 'dist')
+        "output": {
+            "filename": 'js/[name].bundle.js',
+            "path": path.resolve(__dirname, 'dist')
         },
 
-        context: path.resolve(__dirname, 'src'),
+        "context": path.resolve(__dirname, 'src'),
 
-        entry: {
+        "entry": {
             "main": "./js/main",
             "home": "./js/home",
             "academics": "./js/academics",
             "about": "./scss/pages/about.scss",
         },
 
-        module: {
-            rules: [
+        "module": {
+            "rules": [
                 {
-                    test: /\.s?css$/,
-                    use: [
-                        
+                    "test": /\.s?css$/,
+                    "use": [
+
                         (mode === "development" ? { 
-                            loader: "style-loader",
-                            options: {
+                            "loader": "style-loader",
+                            "options": {
+                                "sourceMap": true,
+                            }
+                        } : {
+                            "loader": MiniCssExtractPlugin.loader,
+                            "options": {
                                 "sourceMap": true,
                                 "outputPath": "css"
                             }
-                        } : {
-                            loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                "sourceMap": true
-                            }
                         }),
                         {
-                            loader: "css-loader",
-                            options: {
+                            "loader": "css-loader",
+                            "options": {
                                 "sourceMap": true
                             }
                         },
                         {
-                            loader: "postcss-loader"
+                            "loader": "postcss-loader"
                         },
                         {
-                            loader: "sass-loader",
-                            options: {
+                            "loader": "sass-loader",
+                            "options": {
                                 "sourceMap": true
                             }
                         }
@@ -84,120 +84,121 @@ module.exports = (args, env) => {
                 },
 
                 {
-                    test: /\.m?js$/,
-                    exclude: /(node_modules|bower_components)/,
-                    loader: 'babel-loader' // options set in babelrc
+                    "test": /\.m?js$/,
+                    "exclude": /(node_modules|bower_components)/,
+                    "loader": 'babel-loader' // options set in babelrc
                 },
 
                 // Font files
                 {
-                    test: /fonts[\/\\].*\.(woff2?|svg|eot|ttf)/,
-                    use: {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[contenthash:8].[ext]',
-                            outputPath: "fonts",
-                            publicPath: "/fonts"
+                    "test": /fonts[\/\\].*\.(woff2?|svg|eot|ttf)/,
+                    "use": {
+                        "loader": 'file-loader',
+                        "options": {
+                            "name": '[contenthash:8].[ext]',
+                            "outputPath": "fonts",
+                            "publicPath": "/fonts"
                         }
                     }
                 },
 
                 // Image files
                 {
-                    test: /\.(jpg|png|gif|jpeg|svg)$/,
-                    exclude: [ path.resolve(__dirname, "src/fonts") ],
-                    use: {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[contenthash:8].[ext]',
-                            outputPath: "images",
-                            publicPath: "/images"
+                    "test": /\.(jpg|png|gif|jpeg|svg)$/,
+                    "exclude": [ path.resolve(__dirname, "src/fonts") ],
+                    "use": {
+                        "loader": 'file-loader',
+                        "options": {
+                            "name": '[contenthash:8].[ext]',
+                            "outputPath": "images",
+                            "publicPath": "/images"
                         }
                     }
                 },
 
                 // Handlebars templates
-                { 
-                    test: /\.hbs$/, 
-                    loader: "handlebars-loader" 
+                {
+                    "test": /\.hbs$/,
+                    "loader": "handlebars-loader"
                 },
-            ],  
+            ],
         },
-        plugins: [
+        "plugins": [
             new CopyWebpackPlugin([
                 {
-                    from: "home",
-                    to: path.join(__dirname, "dist/images/home"),
-                    context: "images"
+                    "from": "home",
+                    "to": path.join(__dirname, "dist/images/home"),
+                    "context": "images"
                 }
             ]),
             new CopyWebpackPlugin([
                 {
-                    from: "about",
-                    to: path.join(__dirname, "dist/images/about"),
-                    context: "images"
+                    "from": "about",
+                    "to": path.join(__dirname, "dist/images/about"),
+                    "context": "images"
                 }
             ]),
             new CleanWebpackPlugin({
-                verbose: true
+                "verbose": true
             }),
 
             // Pages to emit
             new HtmlWebpackPlugin({
-                filename: 'page_template.html',
-                template: './html/interior-nav.hbs',
-                chunks: 'main'
+                "filename": 'page_template.html',
+                "template": './html/interior-nav.hbs',
+                "chunks": ['main']
             }),
             new HtmlWebpackPlugin({
-                filename: 'home.html',
-                template: './html/home.hbs',
-                chunks: [
+                "filename": 'home.html',
+                "template": './html/home.hbs',
+                "chunks": [
                     'main',
                     "home"
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'academics.html',
-                template: './html/academics.hbs',
-                chunks: [
+                "filename": 'academics.html',
+                "template": './html/academics.hbs',
+                "chunks": [
                     "main",
                     "academics"
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'academic-programs/business.html',
-                template: './html/academics.hbs',
-                chunks: [
+                "filename": 'academic-programs/business.html',
+                "template": './html/academics.hbs',
+                "chunks": [
                     "main",
                     "academics"
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'styleguide.html',
-                template: './html/styleguide.hbs',
-                chunks: 'main'
+                "filename": 'styleguide.html',
+                "template": './html/styleguide.hbs',
+                "chunks": 'main'
             }),
             new HtmlWebpackPlugin({
-                filename: 'about.html',
-                template: './html/about.hbs',
-                chunks: [
+                "filename": 'about.html',
+                "template": './html/about.hbs',
+                "chunks": [
                     'main',
                     'about'
                 ]
             }),
             new HtmlWebpackPlugin({
-                filename: 'center.html',
-                template: './html/interior-nav.hbs',
-                templateParameters: require('./src/html/contexts/images.json')
+                "filename": 'center.html',
+                "template": './html/interior-nav.hbs',
+                "templateParameters": require('./src/html/contexts/images.json')
             }),
 
 
             new MiniCssExtractPlugin({
-                filename: 'css/[name].css',
-                chunkFilename: 'css/[id].css',
+                "filename": 'css/[name].css',
+                "chunkFilename": 'css/[id].css'
             }),
+
             new webpack.HotModuleReplacementPlugin()
         ]
    }
-    
+
 }
