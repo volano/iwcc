@@ -1,14 +1,10 @@
+@import "../base";
+
 .p-about{
-    
-    .page-title{
-        &:before{
-            content:"About Iowa Western";
-        }
-    }
 
     .s-hero-about{
         max-height: 520px;
-        background: url('../images/about_hero.png') no-repeat center;
+        background: url('../../images/about_hero.png') no-repeat center;
         background-size:cover;
         position:relative;
         height:100%;
@@ -23,7 +19,7 @@
         @include media-breakpoint-down(md) {
             align-items: center;
             margin-bottom:0;
-            
+
             }
         .image-bar{
             display:flex;
@@ -38,7 +34,7 @@
                     width: 100%;
                     align-items: center;
                     }
-                
+
                 h3{
                     margin:.5rem 0 1.5rem 0;
                 }
@@ -46,13 +42,13 @@
         }
 
         .about-container{
-        background-color:transparent;
+        background-color: transparent;
 
             h2{
                 margin-bottom:1rem;
             }
             p {
-              font-size:1.5rem;  
+              font-size:1.5rem;
               @include media-breakpoint-down(md) {
               font-size:1rem;
               }
