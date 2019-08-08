@@ -22,7 +22,8 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
 
         .btn-action{
             color:project-color("blue");
-            box-shadow: 0px 6px 12px project-color("dark-gray");
+            //box-shadow: inset 4px 4px 10px 0px transparentize(project-color("navy-blue"), .59), 4px 4px 10px 0px transparentize(project-color("navy-blue"), .59);
+            filter: drop-shadow(4px 4px 8px transparentize(project-color("navy-blue"), .59));
 
             &:hover{
                 color:project-color("black");
@@ -35,7 +36,6 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
             }
 
             .icon{
-                box-shadow: 4px 4px 8px project-color("dark-gray");
             }
         }
     }

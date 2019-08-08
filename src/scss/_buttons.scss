@@ -1,15 +1,21 @@
-.btn[type=submit] {
-    background-color: project-color("green");
-    text-shadow: 5px 5px 10px transparentize($black, .5);
-    box-shadow: 5px 5px 10px transparentize($black, .5);
-    color: $white;
-    margin-bottom: 20px; // compensate for drop shadow
+.btn{
+    &[type=submit],
+    &[type=reset] {
+        color: $white;
+        @include hover-focus-active {
+            background-color: project-color("purple");
+        }
 
-    @include hover-focus-active {
-        background-color: project-color("purple");
-        box-shadow:none;
+    }
+    &[type=submit] {
+        background-color: project-color("green");
+
+    }
+    &[type=reset] {
+        background-color: project-color("gray");
     }
 }
+
 
 .btn-action {
     display: flex;
