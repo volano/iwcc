@@ -1,9 +1,14 @@
-$font-family-sans-serif: 'TitilliumText22LRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; 
+$font-family-regular:'TitilliumText22LRegular';
+$font-family-bold: 'TitilliumText22LBold', sans-serif;
+$font-family-sans-serif: $font-family-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
 $primary: project-color("blue");
 $dark: project-color("black");
 $theme-colors: (
     "lightgray": project-color("light-gray")
 );
+
+$body-color: project-color("deep-black");
+$box-shadow-default: 4px 9px 9px 0px transparentize(project-color("deep-black"), .85);
 
 $navbar-padding-y: 0;
 $navbar-padding-x: 0;
@@ -12,7 +17,7 @@ $grid-gutter-width: 20px;
 
 $font-size-base:              1rem;
 
-$headings-font-family: "TitilliumText22LBold";
+$headings-font-family: $font-family-bold;
 $headings-font-weight: 500;
 
 // Heading font sizes
@@ -104,3 +109,5 @@ $custom-checkbox-indicator-indeterminate-box-shadow:   none;
 
 $custom-radio-indicator-border-radius:          50%;
 $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23");
+
+$custom-select-border-radius: 0;

@@ -1,0 +1,102 @@
+.s-employees{
+    form {
+        text-align: center;
+    }
+
+    .employee-search {
+        text-align: left;
+        margin: 0 auto 1.5rem;
+
+        .or{
+            width: 100%;
+            display: block;
+            margin-bottom: 1rem;
+            text-align: center;
+            line-height: $input-line-height;
+        }
+
+        .form-button-group{
+            display: flex;
+            .btn {
+                flex: 1;
+                margin: 0 3px;
+            }
+        }
+    }
+
+    .employee-list-item-card {
+        padding: 20px 27px 30px;
+        border-left: 2px solid project-color("blue");
+        box-shadow: $box-shadow-default;
+
+        h4, h5, h6{
+            margin: 0;
+            padding: 0;
+            line-height: 1.125;
+        }
+        h4{
+            font-size: 1.5rem;
+        }
+        h5{
+            font-size: 1.25rem;
+            color: project-color("deep-black");
+        }
+        h6{
+            font-size: 1rem;
+            font-family: $font-family-regular;
+            color: $body-color;
+        }
+    }
+
+    .employee-list-item {
+        padding-bottom: 25px;
+    }
+
+    .employee-list-item-card-details {
+        @include list-unstyled;
+        font-size: 1rem;
+        line-height: 1.125;
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        form {
+            padding: 0 50px 0 100px;
+        }
+        .form-group {
+            flex: 1 1 auto;
+            margin-bottom: 0;
+        }
+
+        .employee-search{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            .or,
+            .form-button-group {
+                flex: 0 1 auto;
+                padding: 0 5px;
+            }
+
+            .or {
+                width: auto;
+                margin-bottom: 0;
+            }
+
+        }
+
+        .employee-list {
+            @include make-row;
+            display: flex;
+            flex-flow: row wrap;
+        }
+    
+        .employee-list-item {
+            @include make-col-ready;
+            @include make-col(1,3);
+        }
+        
+    }
+}
+
