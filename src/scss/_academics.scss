@@ -13,6 +13,49 @@
     height:auto;
 
     .btn-action {
+        .icon {
+            background: transparent $sprite-academics no-repeat top center;
+            content: "";
+            border-radius: 50%;
+            border: 5px solid $white;
+        }
+    }
+
+    &.simple {
+        .btn-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            filter: none !important;
+            flex: 1;
+            color: project-color("blue");
+
+            @include hover-focus-active {
+                border-color: transparent;
+            }
+        }
+
+        .icon {
+            height: 75px;
+            width: 75px;
+            background-size: 65px 455px;
+            margin-bottom: 25px;
+            filter: drop-shadow(4px 4px 8px transparentize(project-color("navy-blue"), .59));
+        }
+
+        @each $meta, $color in $meta-map {
+            .#{$meta} {
+                .icon {
+                    background-position-y: (index($meta-map, ($meta $color))-1) * -65px;
+                }
+            }
+        }
+    }
+
+    &:not(.simple) .btn-action {
         border-width: 5px;
         border-bottom: 0;
         line-height: 1;
@@ -20,6 +63,7 @@
         margin-bottom:80px;
         font-size: 1.6rem;
         padding: .5rem 1.8rem 4.5rem 1.8rem;
+        border: 2px solid $white;
 
         &:hover{
             color:project-color("yellow");
@@ -36,16 +80,20 @@
         }
 
         .icon {
-            background: transparent $sprite-academics no-repeat top center;
-            content: "";
             height: 110px;
             width: 110px;
             border-radius: 100px;
             background-size: 100px 700px;
             margin: 0 10px;
-            border: 5px solid $white;
         }
 
+        @each $meta, $color in $meta-map {
+            .#{$meta} {
+                .icon {
+                    background-position-y: (index($meta-map, ($meta $color))-1) * -100px;
+                }
+            }
+        }    
     }
 
     .btn-list{
@@ -62,7 +110,6 @@
             }
             .icon {
                 background-color: project-color($color);
-                background-position-y: (index($meta-map, ($meta $color))-1) * -100px;
             }
         }
     }
@@ -73,7 +120,7 @@
             margin-bottom:10rem;
         }
 
-        .btn-list {
+        &:not(.simple) .btn-list {
             display:flex;
             flex-flow: row wrap;
             justify-content: space-between;
@@ -85,7 +132,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        .btn-list .btn-action {
+        &:not(.simple) .btn-list .btn-action {
             width: 30%;
         }
     }

@@ -20,12 +20,15 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
             margin-bottom:1rem;
         }
 
-        .btn-action{
+        .btn-action {
             color:project-color("blue");
+        }
+
+        &:not(.simple) .btn-action{
             //box-shadow: inset 4px 4px 10px 0px transparentize(project-color("navy-blue"), .59), 4px 4px 10px 0px transparentize(project-color("navy-blue"), .59);
             filter: drop-shadow(4px 4px 8px transparentize(project-color("navy-blue"), .59));
 
-            &:hover{
+            @include hover-focus-active {
                 color:project-color("black");
                 border-color:project-color("navy-blue");
 
@@ -247,6 +250,70 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
                 border-left-color: project-color($color);
             }
         }
+
+    }
+
+    .programs-compare & {
+        @include make-row;
+        width: 100%;
+
+
+        dl {}
+        dt {
+            margin-bottom: 6px;
+            font-family: $font-family-bold;
+            font-weight: 700;
+            color: project-color("blue");
+            border-bottom: 1px solid project-color("gray");
+        }
+        dd {
+            margin-bottom: 15px;
+        }
+
+        .program {
+            @include make-col-ready;
+            @include make-col(1,4);
+            border: 0;
+            display: block;
+
+            .card-header {
+                display: flex;
+            }
+    
+            .card-body {
+                margin-top: 55px;
+                position: relative;
+                min-height: 45px;
+                padding: 50px 10px 10px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 75px;
+                    height: 75px;
+                    top: -37px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border: 5px solid $white;
+                    border-radius: 50%;
+                    background: transparent $sprite-academics no-repeat top center;
+                    background-size: 65px 455px;
+                    box-shadow: 4px 4px 10px 0px transparentize(project-color("navy-blue"), .59);
+                }
+            }
+    
+            @each $meta, $color in $meta-map {
+                &.meta-#{$meta} .card-body {
+                    border: 1px solid project-color($color);
+
+                    &::before {
+                        background-color: project-color($color);
+                        background-position-y: (index($meta-map, ($meta $color))-1) * -65px;
+                    }
+                }
+            }
+        }
+
     }
 
     @include media-breakpoint-up(sm){

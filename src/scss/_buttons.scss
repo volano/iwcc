@@ -16,6 +16,17 @@
     }
 }
 
+@each $color-name in ("blue", "green","purple") {
+    .btn-#{$color-name} {
+        color: $white;
+        background-color: project-color($color-name);
+
+        @include hover-focus-active {
+            color: $white;
+            background-color: darken(project-color($color-name), 10);
+        }
+    }
+}
 
 .btn-action {
     display: flex;
@@ -23,13 +34,13 @@
     background: none;
     color: $white;
     position: relative;
-    border: 2px solid $white;
     border-radius: 0;
     border-bottom: 0;
     line-height: 1;
     outline: 0;
+    align-items: center;
 
-    &:hover{
+    @include hover-focus-active {
         color:project-color("yellow");
         border-color:project-color("yellow");
 

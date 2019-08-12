@@ -21,7 +21,7 @@
         },
         {
             "title": "Design Technology",
-            "metaType": "industrial",
+            "metaType": "communication",
             "terms": {
                 "fall": 1,
                 "spring": 1,
@@ -38,7 +38,7 @@
         },
         {
             "title": "Electrical Technology Certificate",
-            "metaType": "industrial",
+            "metaType": "social",
             "terms": {
                 "fall": 1,
                 "spring": 1,
@@ -55,75 +55,7 @@
         },
         {
             "title": "Electrical Technology Diploma",
-            "metaType": "industrial",
-            "terms": {
-                "fall": 1,
-                "spring": 1,
-                "summer": 1
-            },
-            "types":{
-                "full": 1,
-                "part": 1,
-                "online": 1,
-                "evening": 1,
-                "transfer": 1
-            },
-            "degree": "diploma"
-        },
-        {
-            "title": "Electronic Engineering Technology",
-            "metaType": "industrial",
-            "terms": {
-                "fall": 1,
-                "spring": 1,
-                "summer": 1
-            },
-            "types":{
-                "full": 1,
-                "part": 1,
-                "online": 1,
-                "evening": 1,
-                "transfer": 1
-            },
-            "degree": "diploma"
-        },
-        {
-            "title": "Industrial Engineering Technology",
-            "metaType": "industrial",
-            "terms": {
-                "fall": 1,
-                "spring": 1,
-                "summer": 1
-            },
-            "types":{
-                "full": 1,
-                "part": 1,
-                "online": 1,
-                "evening": 1,
-                "transfer": 1
-            },
-            "degree": "diploma"
-        },
-        {
-            "title": "Industrial Maintenance Technician",
-            "metaType": "industrial",
-            "terms": {
-                "fall": 1,
-                "spring": 1,
-                "summer": 1
-            },
-            "types":{
-                "full": 1,
-                "part": 1,
-                "online": 1,
-                "evening": 1,
-                "transfer": 1
-            },
-            "degree": "diploma"
-        },
-        {
-            "title": "Industrial Technology",
-            "metaType": "industrial",
+            "metaType": "general",
             "terms": {
                 "fall": 1,
                 "spring": 1,

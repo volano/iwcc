@@ -196,6 +196,15 @@ module.exports = (args, env) => {
                 ]
             }),
             new HtmlWebpackPlugin({
+                "filename": 'academic-programs/compare.html',
+                "template": './html/academics.hbs',
+                "templateParameters": require('./src/html/contexts/programs.compare.json'),
+                "chunks": [
+                    "main",
+                    "academics"
+                ]
+            }),
+            new HtmlWebpackPlugin({
                 "filename": 'styleguide.html',
                 "template": './html/styleguide.hbs',
                 "chunks": 'main'
