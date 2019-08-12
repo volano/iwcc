@@ -490,25 +490,15 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translateX(-50%) translateY(-50%);
+                transform: translate(-50%, -50%);
                 border:2px solid $white;
                 color:$white;
-                font-family: 'TitilliumText22LBold';
+                font-family: $font-family-bold;
                 width:14rem;
 
                 &:hover{
                     color:project-color("yellow");
                     border-color:project-color("yellow");
-                }
-            }
-
-            .play{
-                color:project-color("yellow");
-                border-color:project-color("yellow");
-
-                &:hover{
-                    color:$white;
-                    border-color:$white
                 }
             }
         }
@@ -579,7 +569,6 @@
         border:solid $white 1px;
         padding:.5rem 2rem;
         color:$white;
-        
 
         &:hover{
             border-color:project-color("yellow");
@@ -622,13 +611,14 @@
             -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
             mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
         }
-        
+
         .btn{
             display: block;
             position: relative;
             text-align: center;
             width:100%;
             background-color:$white;
+            border-radius: 0;
             border: 3px solid project-color("blue");
             color:project-color("blue");
             font-size: 2rem;
@@ -680,10 +670,10 @@
     }
 
     @include media-breakpoint-up (lg) {
-        padding: 2rem 100px 0;  
+        padding: 2rem 100px 0;
 
         .center-panel {
-            width:25%;    
+            width:25%;
         }
     }
 
@@ -734,7 +724,7 @@
             font-size: 1rem;
             padding: 12px 24px;
             background-image: linear-gradient(to left, transparentize(project-color("blue"), 0), transparentize(project-color("blue"), .25));
-        }    
+        }
         ul{
             font-size: 2rem; 
             margin:2rem 0 0 -1rem;
@@ -758,12 +748,12 @@
         .finder-nav {
             display: block;
         }
-        
+
         .medallion {
             width: 333px;
             height: 333px;
             transform: translate(-50%, -166.5px);
-        }    
+        }
     }
 
     .sidebar{
@@ -778,7 +768,7 @@
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
         padding-right: 0;
-    
+
         .close{
             display: block;
         }
@@ -801,26 +791,6 @@
     .content{
         display: flex;
         flex-direction: column;
-    }
-
-    .s-newsevents{
-        order:3;
-    }
-
-    .s-admissions{
-        order:2;
-    }
-
-    .s-academics{
-        order:4;
-    }
-
-    .s-featured{
-        order:4;
-    }
-
-    .s-centers{
-        order:4;
     }
 
     .s-hero{
@@ -859,8 +829,6 @@
         }
 
     }
-
-
 
     @include media-breakpoint-down(lg){
         .s-centers{
