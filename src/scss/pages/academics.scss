@@ -37,12 +37,18 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
         }
     }
 }
-.s-programs {
+.header-academics{
+    h3 {}
+    &::before {}
+    &.header-meta-industrial {
+
+    }
+}
+
+.programs{
     h3 {
         color: project-color("green");
     }
-}
-.programs{
     legend {
         border-bottom: 1px solid project-color("dark");
     }
@@ -91,6 +97,10 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
 
 .programs-filters{
 
+    ul.program-filter-column {
+        @include list-unstyled;
+    }
+
     .custom-control {
         margin-bottom: 20px;
     }
@@ -116,38 +126,36 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
     }
 }
 
-.programs-listings {
-    .legend-terms {
-        font-size: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        line-height: 30px;
+.legend-terms {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 30px;
 
-        span {
-            padding-left: 38px;
-            display: inline-block;
-            margin-right: 38px;
-            margin-bottom: 10px;
-            background:transparent $sprite-programs no-repeat top left;
-            background-size: 30px 390px;
-            max-height: 30px;
+    span {
+        padding-left: 38px;
+        display: inline-block;
+        margin-right: 38px;
+        margin-bottom: 10px;
+        background:transparent $sprite-programs no-repeat top left;
+        background-size: 30px 390px;
+        max-height: 30px;
 
-            &:last-child{
-                margin-right: 0;
-            }
+        &:last-child{
+            margin-right: 0;
         }
+    }
 
-        .term-fall{
-            background-position-y: -60px;
-        }
-        .term-summer{
-            background-position-y: -30px;
-        }
+    .term-fall{
+        background-position-y: -60px;
+    }
+    .term-summer{
+        background-position-y: -30px;
     }
 }
 
 .program-list {
-    h4 {
+    h5 {
         font-size: 1.125rem;
         color: project-color("deep-black");
     }

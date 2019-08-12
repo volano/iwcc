@@ -1,0 +1,20 @@
+<div class="program meta-{{this.metaType}}">
+    <h5 class="program-title">{{this.title}}</h5>
+    <div class="program-legend">
+        <div class="program-legend-term">
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Fall Start"{{#unless this.terms.fall }} disabled{{/unless}}><span class="icon icon-program-fall">Fall Start Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Spring Start"{{#unless this.terms.spring }} disabled{{/unless}}><span class="icon icon-program-spring">Spring Start Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Summer Start"{{#unless this.terms.summer }} disabled{{/unless}}><span class="icon icon-program-summer">Summer Start Program</span></button>
+        </div>
+        <div class="program-legend-type">
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Full Time Program"{{#unless this.types.full }} disabled{{/unless}}><span class="icon icon-program-full">Full Time Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Part Time Program"{{#unless this.types.part }} disabled{{/unless}}><span class="icon icon-program-part">Part Time Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Online Program"{{#unless this.types.online }} disabled{{/unless}}><span class="icon icon-program-online">Online Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Evening Program"{{#unless this.types.evening }} disabled{{/unless}}><span class="icon icon-program-evening">Evening Program</span></button>
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="Transfer Program"{{#unless this.types.transfer }} disabled{{/unless}}><span class="icon icon-program-transfer">Transfer Program</span></button>
+        </div>
+        <div class="program-legend-degree">
+            <button type="button" class="btn btn-icon" data-toggle="tooltip" data-placement="top" title="{{this.degree}}"><span class="icon icon-program-{{this.degree}}">{{this.degree}}</span></button>
+        </div>
+    </div>
+</div>

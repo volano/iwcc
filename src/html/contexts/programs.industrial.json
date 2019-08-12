@@ -1,0 +1,221 @@
+{
+    "pageType": "meta",
+    "metaType": "industrial",
+    "metaTitle": "Industrial Technology and Transportation",
+    "areas":[
+        {
+            "title": "Manufacturing",
+            "programs":[
+                {
+                    "title": "CNC Machining",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Design Technology",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Electrical Technology Certificate",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "certificate"
+                },
+                {
+                    "title": "Electrical Technology Diploma",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Electronic Engineering Technology",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Industrial Engineering Technology",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Industrial Maintenance Technician",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Industrial Technology",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                }
+            ]
+        },
+        {
+            "title": "Construction",
+            "programs":[
+                {
+                    "title": "Construction Technology: Reseidential",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "Construction Technology: Carpentry",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "HVAC/R Maintenance",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                },
+                {
+                    "title": "HVAC/R Technology",
+                    "metaType": "industrial",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 1,
+                        "summer": 1
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 1,
+                        "online": 1,
+                        "evening": 1,
+                        "transfer": 1
+                    },
+                    "degree": "diploma"
+                }
+            ]
+        }
+    ]
+}

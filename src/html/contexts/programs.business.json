@@ -1,0 +1,29 @@
+{
+    "pageType": "meta",
+    "metaType": "business",
+    "metaTitle": "Business",
+    "areas":[
+        {
+            "title": "Manufacturing",
+            "programs":[
+                {
+                    "title": "CNC Machining",
+                    "metaType": "business",
+                    "terms": {
+                        "fall": 1,
+                        "spring": 0,
+                        "summer": 0
+                    },
+                    "types":{
+                        "full": 1,
+                        "part": 0,
+                        "online": 0,
+                        "evening": 0,
+                        "transfer": 1
+                    },
+                    "degree": "certificate"
+                }
+            ]
+        }
+    ]
+}

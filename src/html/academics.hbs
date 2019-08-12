@@ -5,12 +5,22 @@
     <body>
         {{> partials/header }}
         <main class="p-academics page-full">
-            {{> partials/titlebar title="Academics"}}
+            {{> partials/titlebar title="Academic Programs"}}
             <section class="s-hero-academics"></section>
             {{> partials/nav-section }}
-            {{> partials/section-academics showGeneral=true }}
+
             <div class="content">
-            {{> components/programs-all}}
+                {{#equals this.pageType "meta" }}
+                    {{> components/programs-meta}}
+                {{/equals}}
+
+                {{#equals this.pageType "compare"}}
+                    {{> components/programs-compare}}
+                {{/equals}}
+
+                {{#equals this.pageType "all"}}
+                    {{> components/programs-all}}
+                {{/equals}}
             </div>
         </main>
         {{> partials/footer }}

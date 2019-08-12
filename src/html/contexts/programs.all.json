@@ -1,0 +1,125 @@
+{
+    "pageType": "all",
+    "programs": [
+        {
+            "title": "Accounting Technician",
+            "metaType": "business",
+            "terms": {
+                "fall": 1,
+                "spring": 1,
+                "summer": 1
+            },
+            "types":{
+                "full": 1,
+                "part": 1,
+                "online": 1,
+                "evening": 1,
+                "transfer": 1
+            },
+            "degree": "diploma"
+        },
+        {
+            "title": "Accounting: Para-Accounting",
+            "metaType": "business",
+            "terms": {
+                "fall": 1,
+                "spring": 1,
+                "summer": 1
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 1,
+                "evening": 1,
+                "transfer": 0
+            },
+            "degree": "aas"
+        },
+        {
+            "title": "Agribusiness Technology",
+            "metaType": "industrial",
+            "terms": {
+                "fall": 1,
+                "spring": 0,
+                "summer": 0
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 0,
+                "evening": 1,
+                "transfer": 0
+            },
+            "degree": "diploma"
+        },
+        {
+            "title": "Agribusiness Technology: Agronomy Operations Certificate",
+            "metaType": "industrial",
+            "terms": {
+                "fall": 1,
+                "spring": 0,
+                "summer": 0
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 0,
+                "evening": 0,
+                "transfer": 1
+            },
+            "degree": "certificate"
+        },
+        {
+            "title": "Agribusiness Technology: Agronomy Sales and Service Diploma",
+            "metaType": "industrial",
+            "terms": {
+                "fall": 1,
+                "spring": 0,
+                "summer": 0
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 0,
+                "evening": 0,
+                "transfer": 1
+            },
+            "degree": "certificate"
+        },
+        {
+            "title": "Applied Business: Individualized Technician Program",
+            "metaType": "business",
+            "terms": {
+                "fall": 1,
+                "spring": 0,
+                "summer": 0
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 0,
+                "evening": 0,
+                "transfer": 1
+            },
+            "degree": "certificate"
+        },
+        {
+            "title": "Art",
+            "metaType": "communication",
+            "terms": {
+                "fall": 1,
+                "spring": 0,
+                "summer": 0
+            },
+            "types":{
+                "full": 1,
+                "part": 0,
+                "online": 0,
+                "evening": 0,
+                "transfer": 1
+            },
+            "degree": "aa"
+        }
+
+    ]
+}

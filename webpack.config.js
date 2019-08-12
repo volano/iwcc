@@ -119,7 +119,19 @@ module.exports = (args, env) => {
                 // Handlebars templates
                 {
                     "test": /\.hbs$/,
-                    "loader": "handlebars-loader"
+                    "loader": "handlebars-loader",
+                    "options": {
+                        "helperDirs": [
+                            path.resolve(__dirname, "src/html/helpers")
+                        ],
+                        "partialDirs":[
+                            path.resolve(__dirname, "src/html/partials"),
+                            path.resolve(__dirname, "src/html/components")
+                        ],
+                        "precompileOptions": {
+                            "knownHelpersOnly": false,
+                        }
+                    }
                 },
             ],
         },
@@ -159,6 +171,7 @@ module.exports = (args, env) => {
             new HtmlWebpackPlugin({
                 "filename": 'academics.html',
                 "template": './html/academics.hbs',
+                "templateParameters": require('./src/html/contexts/programs.all.json'),
                 "chunks": [
                     "main",
                     "academics"
@@ -167,6 +180,16 @@ module.exports = (args, env) => {
             new HtmlWebpackPlugin({
                 "filename": 'academic-programs/business.html',
                 "template": './html/academics.hbs',
+                "templateParameters": require('./src/html/contexts/programs.business.json'),
+                "chunks": [
+                    "main",
+                    "academics"
+                ]
+            }),
+            new HtmlWebpackPlugin({
+                "filename": 'academic-programs/industrial-technology-transportation.html',
+                "template": './html/academics.hbs',
+                "templateParameters": require('./src/html/contexts/programs.industrial.json'),
                 "chunks": [
                     "main",
                     "academics"
