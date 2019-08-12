@@ -37,11 +37,46 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
         }
     }
 }
-.header-academics{
-    h3 {}
-    &::before {}
-    &.header-meta-industrial {
 
+.header-academic{
+    position: relative;
+    min-height: 130px;
+    margin: 1rem 0 1rem 65px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    h3 {
+        padding-left: 95px;
+        border-bottom: 10px solid project-color("green");
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: -65px;
+        transform: translateY(-50%);
+        width: 130px;
+        height: 130px;
+        border: 5px solid $white;
+        border-radius: 50%;
+        background: project-color("green") $sprite-academics no-repeat top center;
+        background-size: 120px 840px;
+    }
+
+    @each $meta, $color in $meta-map {
+        &.header-meta-#{$meta} {
+            h3 {
+                border-color: project-color($color);
+            }
+
+            &::before {
+                background-color: project-color($color);
+                background-position-y: (index($meta-map, ($meta $color))-1) * -120px;
+            }
+        }
     }
 }
 
@@ -155,6 +190,9 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
 }
 
 .program-list {
+    h4 {
+        color: project-color("deep-black");
+    }
     h5 {
         font-size: 1.125rem;
         color: project-color("deep-black");
@@ -167,26 +205,10 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
         margin-bottom: 14px;
         padding: 14px 30px 5px 5px;
 
-        &.meta-business {
-            border-left-color: project-color("green");
-        }
-        &.meta-industrial {
-            border-left-color: project-color("orange");
-        }
-        &.meta-communication {
-            border-left-color: project-color("yellow");
-        }
-        &.meta-health {
-            border-left-color: project-color("red");
-        }
-        &.meta-science {
-            border-left-color: project-color("purple");
-        }
-        &.meta-social {
-            border-left-color: project-color("blue");
-        }
-        &.meta-general {
-            border-left-color: project-color("gray");
+        @each $meta, $color in $meta-map {
+            &.meta-#{$meta} {
+                border-left-color: project-color($color);
+            }
         }
     }
 

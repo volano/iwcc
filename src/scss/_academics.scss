@@ -53,83 +53,17 @@
         align-content: stretch;
     }
 
-    .business {
-        .ribbon::before,
-        .ribbon::after
-        {
-            border-top-color: project-color("green");
-        }
-        .icon {
-            background-color: project-color("green")
-        }
-    }
-
-    .industrial{
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("orange");
-        }
-
-        .icon{
-            background-color: project-color("orange");
-            background-position-y: -100px;
-        }
-    }
-    .communication{
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("yellow");
-        }
-
-        .icon{
-            background-color: project-color("yellow");
-            background-position-y: -200px;
-        }
-    }
-    .health{
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("red");
-        }
-
-        .icon{
-            background-color: project-color("red");
-            background-position-y: -300px;
-        }
-    }
-    .science{
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("purple");
-        }
-
-        .icon{
-            background-color: project-color("purple");
-            background-position-y: -400px;
-        }
-    }
-
-    .social{
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("blue");
-        }
-
-        .icon{
-            background-color: project-color("blue");
-            background-position-y: -500px;
-        }
-    }
-    .general{
-        line-height:3.15rem;
-        .ribbon::before,
-        .ribbon::after{
-            border-top-color: project-color("dark-gray");
-        }
-
-        .icon{
-            background-color: project-color("dark-gray");
-            background-position-y: -600px;
+    @each $meta, $color in $meta-map {
+        .#{$meta} {
+            .ribbon::before,
+            .ribbon::after
+            {
+                border-top-color: project-color($color);
+            }
+            .icon {
+                background-color: project-color($color);
+                background-position-y: (index($meta-map, ($meta $color))-1) * -100px;
+            }
         }
     }
     
