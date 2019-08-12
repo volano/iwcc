@@ -10,16 +10,16 @@
             {{> partials/nav-section }}
 
             <div class="content">
+                {{#equals this.pageType "all"}}
+                    {{> components/programs-all}}
+                {{/equals}}
+
                 {{#equals this.pageType "meta" }}
                     {{> components/programs-meta}}
                 {{/equals}}
 
                 {{#equals this.pageType "compare"}}
                     {{> components/programs-compare}}
-                {{/equals}}
-
-                {{#equals this.pageType "all"}}
-                    {{> components/programs-all}}
                 {{/equals}}
             </div>
         </main>

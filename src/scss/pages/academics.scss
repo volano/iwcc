@@ -118,6 +118,7 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
     @include media-breakpoint-up(xl){
         @include make-row;
         flex-direction: row-reverse;
+        flex-wrap: nowrap;
 
         .programs-filters{
             @include make-col-ready;
@@ -125,16 +126,14 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
         }
         .programs-listings{
             @include make-col-ready;
-            @include make-col(2,3);
+            flex: 1 1 auto;
+            width: auto;
+            max-width: 100%; // Reset earlier grid tiers
         }
     }
 }
 
 .programs-filters{
-
-    ul.program-filter-column {
-        @include list-unstyled;
-    }
 
     .custom-control {
         margin-bottom: 20px;
@@ -161,15 +160,46 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
     }
 }
 
+.programs-legend {
+
+    .program-filter-column {
+        @include list-unstyled;
+        margin-bottom: 50px;
+
+        li {
+            margin-bottom: 15px;
+        }
+    }
+
+    .legend-terms {
+        display: block;
+    }
+
+    @include media-breakpoint-between(sm,lg) {
+        @include make-row;
+        .program-filter-column {
+            @include make-col-ready;
+            @include make-col(1,2);
+        }
+        .legend-terms {
+            @include make-col-ready;
+            @include make-col(1,1);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+    }
+}
+
 .legend-terms {
     font-size: 1rem;
     display: flex;
     flex-wrap: wrap;
     line-height: 30px;
 
-    span {
+    span,
+    li {
         padding-left: 38px;
-        display: inline-block;
         margin-right: 38px;
         margin-bottom: 10px;
         background:transparent $sprite-programs no-repeat top left;
@@ -179,6 +209,13 @@ $icons: spring, summer, fall, full, part, evening, online, transfer, aa, as, aas
         &:last-child{
             margin-right: 0;
         }
+    }
+    span {
+        display: inline-block;
+    }
+
+    li {
+        display: block;
     }
 
     .term-fall{
