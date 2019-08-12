@@ -12,10 +12,6 @@
     display:block;
     height:auto;
 
-    h2 {
-        margin-bottom:10rem;
-    }
-
     .btn-action {
         border-width: 5px;
         border-bottom: 0;
@@ -139,6 +135,10 @@
     
     @include media-breakpoint-up(md) {
         padding:20px 100px;
+        h2 {
+            margin-bottom:10rem;
+        }
+
         .btn-list {
             display:flex;
             flex-flow: row wrap;
@@ -147,7 +147,7 @@
             .btn-action {
                 width: 45%;
             }
-        }    
+        }
     }
 
     @include media-breakpoint-up(lg) {
