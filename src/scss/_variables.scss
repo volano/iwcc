@@ -6,6 +6,15 @@ $dark: project-color("black");
 $theme-colors: (
     "lightgray": project-color("light-gray")
 );
+$meta-map: (
+    "business": "green",
+    "industrial": "orange",
+    "communication": "yellow",
+    "health": "red",
+    "science": "purple",
+    "social": "blue",
+    "general": "dark-gray"
+);
 
 $body-color: project-color("deep-black");
 $box-shadow-default: 4px 9px 9px 0px transparentize(project-color("deep-black"), .85);
