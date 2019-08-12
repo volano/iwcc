@@ -29,6 +29,7 @@
 // Core styles
 @import "global";
 @import "navigation";
+@import "hero";
 @import "footer";
 @import "icons";
 @import "buttons";
@@ -82,65 +83,4 @@ main {
         }
     
     }    
-}
-
-
-.s-hero{
-    height: 820px;
-    background: linear-gradient(rgba(0,42,66,.5), rgba(0,42,66,.5)), url(../images/home_hero.png) no-repeat center;
-    background-size:cover;
-    position:relative;
-    box-shadow: 0 4px 2px -2px gray;
-
-    .hero-caption{
-        color:$white;
-        align-self: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-
-        h2{
-            margin-bottom:30px;
-            color:project-color("white");
-        }
-
-        p{
-            text-align: center;
-        }
-
-        .play-button{
-            color:project-color("yellow");
-            font-weight:600;
-            border:solid 2px project-color("yellow");
-            padding:1.5rem 2.5rem;
-            margin:1.5rem 0 1.5rem 0;
-            font-size:1.5rem;
-
-            &:hover{
-                color:$white;
-                border-color:$white;
-            }
-            &:after{
-                content: "";
-                width: 0;
-                height: 0;
-                border-left: 11px solid project-color("yellow");
-                border-right: 0;
-                border-top: 12px solid transparent;
-                border-bottom: 12px solid transparent;
-                display: inline-block;
-                vertical-align: -.15em;
-                margin-left: 10px;
-            }
-        }
-
-    }
-
-}
- 
-@include media-breakpoint-up(md) {
-
 }
