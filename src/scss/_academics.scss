@@ -32,6 +32,7 @@
             filter: none !important;
             flex: 1;
             color: project-color("blue");
+            border: 0;
 
             @include hover-focus-active {
                 border-color: transparent;
@@ -55,37 +56,44 @@
         }
     }
 
-    &:not(.simple) .btn-action {
-        border: 2px solid $white;
-        border-width: 5px;
-        border-bottom: 0;
-        line-height: 1;
-        outline: 0;
-        margin-bottom:80px;
-        font-size: 1.6rem;
-        padding: .5rem 1.8rem 4.5rem 1.8rem;
-
-        &:hover{
-            color:project-color("yellow");
-            border-color: project-color("yellow");
-        }
+    &:not(.simple) {
 
         .ribbon {
             bottom: -45px;
 
-            &:before,
+            &::before,
             &::after {
                 border-top: 15px solid project-color("green");
                 border-bottom-width: 5px;
             }
         }
 
-        .icon {
-            height: 110px;
-            width: 110px;
-            border-radius: 100px;
-            background-size: 100px 700px;
-            margin: 0 10px;
+        .btn-action {
+            border-width: 5px;
+            border-bottom: 0;
+            line-height: 1;
+            outline: 0;
+            margin-bottom:80px;
+            font-size: 1.6rem;
+            padding: .5rem 1.8rem 4.5rem 1.8rem;
+
+            &:hover{
+                color:project-color("yellow");
+                border-color: project-color("yellow");
+            }
+
+            .icon {
+                height: 110px;
+                width: 110px;
+                border-radius: 100px;
+                background-size: 100px 700px;
+                margin: 0 10px;
+            }
+        }
+
+        .btn-list{
+            margin-bottom: 0;
+            align-content: stretch;
         }
 
         @each $meta, $color in $meta-map {
@@ -94,14 +102,9 @@
                     background-position-y: (index($meta-map, ($meta $color))-1) * -100px;
                 }
             }
-        }    
-    }
+        }
 
-    .btn-list{
-        margin-bottom: 0;
-        align-content: stretch;
     }
-
     @each $meta, $color in $meta-map {
         .#{$meta} {
             .ribbon::before,
@@ -113,8 +116,8 @@
                 background-color: project-color($color);
             }
         }
-    }
-    
+    }       
+
     @include media-breakpoint-up(md) {
         padding:20px 100px;
         h2 {
