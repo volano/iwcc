@@ -72,9 +72,9 @@ $carousel-indicator-transition:      background-color .6s ease;
 $carousel-caption-width:             70% !default;
 $carousel-caption-color:             project-color("white");
 
-$carousel-control-icon-width:        20px !default;
+$carousel-control-icon-width:        70px ;
 
-$carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 173.72 299.22' xmlns:v='https://vecta.io/nano'%3E%3Cpath transform='rotate(-180 0 0)' d='M117.47 150.2L7.02 259.3c-21.82 21.82 12.27 54.55 34.1 32.73l125.45-125.46c9.55-9.54 9.55-24.54 0-32.72L41.1 7.03C19.3-14.8-14.8 19.3 7.02 39.76z' fill='#{$carousel-control-color}' fill-rule='evenodd'/%3E%3C/svg%3E"), "#", "%23");
+$carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 173.7 299.2' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M56.3 149L166.7 39.9c21.8-21.8-12.3-54.5-34.1-32.7L7.2 132.7c-9.6 9.5-9.6 24.5 0 32.7l125.5 126.8c21.8 21.8 55.9-12.3 34.1-32.7L56.3 149z' fill-rule='evenodd' fill='#{$carousel-control-color}'/%3E%3C/svg%3E"), "#", "%23");
 $carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 173.72 299.22' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M117.47 150.2L7.02 259.3c-21.82 21.82 12.27 54.55 34.1 32.73l125.45-125.46c9.55-9.54 9.55-24.54 0-32.72L41.1 7.03C19.3-14.8-14.8 19.3 7.02 39.76z' fill='#{$carousel-control-color}' fill-rule='evenodd'/%3E%3C/svg%3E"), "#", "%23");
 
 $carousel-transition-duration:       .6s !default;
