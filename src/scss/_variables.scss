@@ -64,18 +64,18 @@ $carousel-control-transition:        opacity .15s ease;
 
 $carousel-indicator-width:           16px;
 $carousel-indicator-height:          16px;
-$carousel-indicator-hit-area-height: 10px !default;
-$carousel-indicator-spacer:          14px ;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          7px;
 $carousel-indicator-active-bg:       project-color("white");
-$carousel-indicator-transition:      opacity .6s ease !default;
+$carousel-indicator-transition:      background-color .6s ease;
 
 $carousel-caption-width:             70% !default;
 $carousel-caption-color:             project-color("white");
 
 $carousel-control-icon-width:        20px !default;
 
-$carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"), "#", "%23") !default;
-$carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 173.72 299.22' xmlns:v='https://vecta.io/nano'%3E%3Cpath transform='rotate(-180 0 0)' d='M117.47 150.2L7.02 259.3c-21.82 21.82 12.27 54.55 34.1 32.73l125.45-125.46c9.55-9.54 9.55-24.54 0-32.72L41.1 7.03C19.3-14.8-14.8 19.3 7.02 39.76z' fill='#{$carousel-control-color}' fill-rule='evenodd'/%3E%3C/svg%3E"), "#", "%23");
+$carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 173.72 299.22' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M117.47 150.2L7.02 259.3c-21.82 21.82 12.27 54.55 34.1 32.73l125.45-125.46c9.55-9.54 9.55-24.54 0-32.72L41.1 7.03C19.3-14.8-14.8 19.3 7.02 39.76z' fill='#{$carousel-control-color}' fill-rule='evenodd'/%3E%3C/svg%3E"), "#", "%23");
 
 $carousel-transition-duration:       .6s !default;
 $carousel-transition:                transform $carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
